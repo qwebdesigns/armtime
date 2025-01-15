@@ -5,7 +5,7 @@
     // Проверяем, что данные существуют и не пусты
     if (data && data.length > 0) {
         // Ограничиваем выборку первыми 10 элементами
-        const firstTenMembers = data.slice(0, 10);
+        const firstTenMembers = data.slice(0, 100);
 
         // Перебираем первые 10 элементов и создаем карточки
         firstTenMembers.forEach(member => {
