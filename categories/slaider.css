@@ -128,6 +128,6 @@ body {
 #arm-man:hover {
 
    box-shadow: 10px 10px 100px 6px #ae00ff5c;
-   background-image: url("image/fon-1\ \(2\).jpg");
+   background-image: url("../assets/image/fon-1\ \(2\).jpg");
    transform: scale(1.1);
 }
