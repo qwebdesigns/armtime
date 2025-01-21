@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Профиль</title>
+   <link rel="stylesheet" href="stata.css">
+</head>
+
+<body>
+
+   <video class="background-video" autoplay muted loop>
+      <source src="video/grey.mp4" type="video/mp4">
+      Ваш браузер не поддерживает видео.
+   </video>
+
+
+
+
+
+
+   <div class="container">
+      <div class="profile-card">
+         <div class="profile-card-img"> <img src="img/photo_2025-01-17_15-52-47.jpg" alt="Фото профиля" id="avatar"></div>
+         <div class="profile-card-name">
+            <h2 id="FIO">Имя Фамилия</h2>
+            <p id="podpis">@instagram</p>
+         </div>
+         <div class="profile-card-class"></div>
+      </div>
+      <div class="stats">
+         <div class="circles">
+            <div id="circle0" class="circle maincircle"style="--percentage: 75%;"><span>75</span></div>
+            <div id="circle1" class="circle" style="--percentage: 60%;"><span>60</span></div>
+            <div id="circle2" class="circle" style="--percentage: 90%;"><span>90</span></div>
+            <div id="circle3" class="circle" style="--percentage: 50%;"><span>50</span></div>
+         </div>
+         <div class="bar-container visible" id="b_c_circle1_1">
+            <span>Строгий подъем на бицепс</span>
+            <div class="bar">
+               <div class="bar-fill" style="width: 80%;"></div>
+            </div>
+         </div>
+         <div class="bar-container visible" id="b_c_circle1_2">
+            <span>Сгибатель кисти</span>
+            <div class="bar">
+               <div class="bar-fill" style="width: 65%;"></div>
+            </div>
+         </div>
+         <div class="bar-container visible" id="b_c_circle1_3">
+            <span>Боковое давление</span>
+            <div class="bar">
+               <div class="bar-fill" style="width: 50%;"></div>
+            </div>
+         </div>
+         <div class="bar-container" id="b_c_circle2_1" style="display: none;">
+            <span>Подъем на луч</span>
+            <div class="bar">
+               <div class="bar-fill" style="width: 50%;"></div>
+            </div>
+         </div>
+         <div class="bar-container" id="b_c_circle2_2" style="display: none;">
+            <span>Пронация</span>
+            <div class="bar">
+               <div class="bar-fill" style="width: 50%;"></div>
+            </div>
+         </div>
+         <div class="bar-container" id="b_c_circle2_3" style="display: none;">
+            <span>Отведение</span>
+            <div class="bar">
+               <div class="bar-fill" style="width: 50%;"></div>
+            </div>
+         </div>
+         <div class="bar-container" id="b_c_circle3_1" style="display: none;">
+            <span>Французский жим</span>
+            <div class="bar">
+               <div class="bar-fill" style="width: 50%;"></div>
+            </div>
+         </div>
+         <div class="bar-container" id="b_c_circle3_2" style="display: none;">
+            <span>Боковое давление</span>
+            <div class="bar">
+               <div class="bar-fill" style="width: 50%;"></div>
+            </div>
+         </div>
+         <div class="achievements">
+            <h3>Дополнительные возможности</h3>
+            <div class="achievement-list">
+               <div class="achievement">Топ среди участников</div>
+               <div class="achievement">Изменить свою карту</div>
+               <div class="achievement">Попасть в топ</div>
+            </div>
+         </div>
+         <div class="edit-button">Редактировать</div>
+      </div>
+   </div>
+
+   <script src="../databaseSript.js"></script>
+   <script src="./logic.js"></script>
+   <script src="./design.js"></script>
+</body>
+
+</html>

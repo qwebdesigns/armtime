@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="singup.css">
+   <title>Регистрация</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.css" />
+
+</head>
+
+<body>
+   <div class="header">
+      <h1>Регистрация</h1>
+   </div>
+   <div class="container">
+      <div class="form-section">
+         <h1>Регистрация</h1>
+         <form>
+            <div class="form-group">
+               <label for="name">Фамилия Имя</label>
+               <input type="text" id="name" name="name" placeholder="Введите ваше имя">
+            </div>
+            <div class="form-group">
+               <label for="email">Электронная почта</label>
+               <input type="email" id="email" name="email" placeholder="Введите ваш email">
+            </div>
+            <div class="form-group">
+               <label for="instagram">Инстаграм</label>
+               <input type="text" id="instagram" name="instagram" placeholder="Ссылка на профиль Instagram">
+            </div>
+            <div class="form-group">
+               <label for="description">Описание</label>
+               <input type="text" id="description" name="description" placeholder="Краткое описание себя">
+            </div>
+            <div class="form-group">
+
+               <p class="category">Нормативы:</p>
+               <p style="color: #8c8c8c;">Борьба в крюк</p>
+               <ul>
+                  <li style="font-weight: 900;">
+                     Категория
+                     <input type="number" name="biceps_curl" placeholder="0" min="1" max="100">
+                  </li>
+                  <li>
+                     1. Строгий подъем на бицепс у стены
+                     <input type="number" name="biceps_curl" placeholder="0" min="1" max="100">
+                  </li>
+
+                  <button onclick="openImage('img/1-image.jpg')">Показать фото</button>
+
+
+                  <li>
+                     2. Сгибатель кисти ( ручка на лямках )
+                     <input type="number" name="wrist_flexor" placeholder="0" min="0.5" max="50" step="0.5">
+                  </li>
+
+                  <button onclick="openImage('img/2-image.jpg')">Показать фото</button>
+
+                  <li>
+                     3. Боковое давление
+                     <input type="number" name="side_pressure" placeholder="0" id="boc1" min="0.8" max="80" step="0.2">
+                  </li>
+
+                  <button onclick="openImage('img/3-image.jpg')">Показать фото</button>
+
+               </ul>
+               <p style="color: #8c8c8c;">Борьба через верх</p>
+               <ul>
+                  <li>
+                     1. Подъём на луч
+                     <input type="number" name="biceps_curl" placeholder="0" min="1" max="100">
+                  </li>
+
+                  <button onclick="openImage('img/4-image.jpg')">Показать фото</button>
+
+
+                  <li>
+                     2. Пронация
+                     <input type="number" name="wrist_flexor" placeholder="0" min="0.5" max="50" step="0.5">
+                  </li>
+
+                  <button onclick="openImage('img/5-image.jpg')">Показать фото</button>
+
+                  <li>
+                     3. Отведение
+                     <input type="number" name="side_pressure" placeholder="0" id="boc1" min="0.8" max="80" step="0.2">
+                  </li>
+
+                  <button onclick="openImage('img/6-image.jpg')">Показать фото</button>
+                  <p style="color: #8c8c8c;">Борьба в трицепс</p>
+                  <ul>
+                     <li>
+                        1. Французский жим
+                        <input type="number" name="biceps_curl" placeholder="0" min="1" max="100">
+                     </li>
+
+                     <button onclick="openImage('img/7-image.jpg')">Показать фото</button>
+
+
+                     <li>
+                        2. Боковое
+                        <input type="number" name="wrist_flexor" placeholder="0" min="0.5" max="50" step="0.5">
+                     </li>
+
+                     <button onclick="openImage('img/3-image.jpg')">Показать фото</button>
+
+
+                  </ul>
+            </div>
+            <button type="submit" style="background-color: #ffffff; color: black;">Зарегистрироваться</button>
+         </form>
+      </div>
+      <div class="card-section" id="load_zone">
+         <div class="overlay" id="overlay"></div>
+         <div id="cropper-container">
+            <img id="cropper_image" alt="Загружаемое изображение">
+         </div>
+         <button id="crop_button" style="display: none;">Сохранить обрезанное изображение</button>
+         <div class="card" id="button_upload_photo">
+            <img src="https://www.svgrepo.com/show/502931/add-photo.svg" alt="Ваша Фотография" id="user_photo">
+            <h2>Ваш профиль</h2>
+            <p>Заполните данные для создания аккаунта</p>
+         </div>
+         <input type="file" id="file_input" accept="image/*" style="display: none;">
+      </div>
+   </div>
+
+   <div class="important-info">
+      <h2>Важная информация</h2>
+      <p>
+         Если вы хотите попасть в топ, вам необходимо подтвердить свои показатели, отправив нам видео-доказательство.
+      </p>
+      <button type="button">Подтвердить</button>
+   </div>
+
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.js"></script>
+   <script src="./sinpup.js"></script>
+   <script>
+      function openImage(imagePath) {
+         window.open(imagePath, '_blank');
+      }
+   </script>
+</body>
+
+</html>

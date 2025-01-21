@@ -1,0 +1,130 @@
+{
+    "Categories": [
+        {
+            "Category Name": "65",
+            "Minimum Participant Weight": "55",
+            "Maximum Participant Weight": "65",
+            "Weights": {
+                "MIN Wrist Flexor": "10",
+                "MAX Wrist Flexor": "45",
+                "MIN Side Pressure": "10",
+                "MAX Side Pressure": "65",
+                "MIN Lift on Radius": "10",
+                "MAX Lift on Radius": "42",
+                "MIN Pronation": "10",
+                "MAX Pronation": "30",
+                "MIN Abduction": "10",
+                "MAX Abduction": "30",
+                "MIN French Press": "10",
+                "MAX French Press": "40",
+                "MIN Biceps": "10",
+                "MAX Biceps": "70"
+            }
+        },
+        {
+            "Category Name": "75",
+            "Minimum Participant Weight": "66",
+            "Maximum Participant Weight": "75",
+            "Weights": {
+                "MIN Wrist Flexor": "10",
+                "MAX Wrist Flexor": "47",
+                "MIN Side Pressure": "10",
+                "MAX Side Pressure": "75",
+                "MIN Lift on Radius": "10",
+                "MAX Lift on Radius": "45",
+                "MIN Pronation": "10",
+                "MAX Pronation": "32",
+                "MIN Abduction": "10",
+                "MAX Abduction": "32",
+                "MIN French Press": "10",
+                "MAX French Press": "45",
+                "MIN Biceps": "10",
+                "MAX Biceps": "75"
+            }
+        },
+        {
+            "Category Name": "85",
+            "Minimum Participant Weight": "76",
+            "Maximum Participant Weight": "85",
+            "Weights": {
+                "MIN Wrist Flexor": "10",
+                "MAX Wrist Flexor": "52",
+                "MIN Side Pressure": "10",
+                "MAX Side Pressure": "77",
+                "MIN Lift on Radius": "10",
+                "MAX Lift on Radius": "50",
+                "MIN Pronation": "10",
+                "MAX Pronation": "35",
+                "MIN Abduction": "10",
+                "MAX Abduction": "35",
+                "MIN French Press": "10",
+                "MAX French Press": "47",
+                "MIN Biceps": "10",
+                "MAX Biceps": "85"
+            }
+        },
+        {
+            "Category Name": "95",
+            "Minimum Participant Weight": "86",
+            "Maximum Participant Weight": "95",
+            "Weights": {
+                "MIN Wrist Flexor": "10",
+                "MAX Wrist Flexor": "55",
+                "MIN Side Pressure": "10",
+                "MAX Side Pressure": "85",
+                "MIN Lift on Radius": "10",
+                "MAX Lift on Radius": "55",
+                "MIN Pronation": "10",
+                "MAX Pronation": "40",
+                "MIN Abduction": "10",
+                "MAX Abduction": "37",
+                "MIN French Press": "10",
+                "MAX French Press": "52",
+                "MIN Biceps": "10",
+                "MAX Biceps": "95"
+            }
+        },
+        {
+            "Category Name": "105",
+            "Minimum Participant Weight": "96",
+            "Maximum Participant Weight": "105",
+            "Weights": {
+                "MIN Wrist Flexor": "10",
+                "MAX Wrist Flexor": "60",
+                "MIN Side Pressure": "10",
+                "MAX Side Pressure": "90",
+                "MIN Lift on Radius": "10",
+                "MAX Lift on Radius": "60",
+                "MIN Pronation": "10",
+                "MAX Pronation": "42",
+                "MIN Abduction": "10",
+                "MAX Abduction": "40",
+                "MIN French Press": "10",
+                "MAX French Press": "55",
+                "MIN Biceps": "10",
+                "MAX Biceps": "100"
+            }
+        },
+        {
+            "Category Name": "Абсолютная (105+)",
+            "Minimum Participant Weight": "106",
+            "Maximum Participant Weight": "999",
+            "Weights": {
+                "MIN Wrist Flexor": "10",
+                "MAX Wrist Flexor": "65",
+                "MIN Side Pressure": "10",
+                "MAX Side Pressure": "95",
+                "MIN Lift on Radius": "10",
+                "MAX Lift on Radius": "65",
+                "MIN Pronation": "10",
+                "MAX Pronation": "45",
+                "MIN Abduction": "10",
+                "MAX Abduction": "40",
+                "MIN French Press": "10",
+                "MAX French Press": "60",
+                "MIN Biceps": "10",
+                "MAX Biceps": "113"
+            }
+        }
+    ]
+}

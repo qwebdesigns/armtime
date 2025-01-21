@@ -1,0 +1,86 @@
+body {
+   font-family: Arial, sans-serif;
+   margin: 0;
+   padding: 0;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   background-image: url("img/body3.jpg");
+   color: #e4e4e7;
+}
+
+.header {
+   width: 100%;
+   text-align: center;
+   background-color: #262626;
+   padding: 5vh 0;
+   box-shadow: 0 0.4vh 0.8vh rgba(0, 0, 0, 0.5);
+   margin-bottom: 5vh;
+}
+
+.header h1 {
+   margin: 0;
+   font-size: 3vh;
+   color: #ffffff;
+}
+
+.container {
+   width: 80%;
+   max-width: 800px;
+   background: #262626;
+   box-shadow: 0 0.4vh 0.8vh rgba(0, 0, 0, 0.5);
+   border-radius: 1vh;
+   padding: 2vh;
+}
+
+.section {
+   margin-bottom: 3vh;
+}
+
+.section p {
+   font-size: 2vh;
+   font-weight: bold;
+   color: #bc9bfe;
+   margin-bottom: 1vh;
+}
+
+.section ul {
+   list-style-type: none;
+   padding: 0;
+}
+
+.section ul li {
+   margin: 1.5vh 0;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   color: #e4e4e7;
+}
+
+.section ul li label {
+   font-size: 1.6vh;
+}
+
+.section ul li input[type="file"] {
+   padding: 0.5vh;
+   border: 0.1vh solid #444;
+   border-radius: 0.5vh;
+   background-color: #1f1f1f;
+   color: #e4e4e7;
+   cursor: pointer;
+}
+
+button {
+   padding: 1vh 2vh;
+   border: none;
+   border-radius: 0.5vh;
+   background-color: #8d5ce7;
+   color: #fff;
+   font-size: 1.6vh;
+   cursor: pointer;
+   transition: background-color 0.3s;
+}
+
+button:hover {
+   background-color: #8055cf;
+}
