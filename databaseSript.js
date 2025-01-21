@@ -73,4 +73,28 @@ async function getData() {
         console.log('Получены новые данные:', jsonData);
     }
 }
+
+
 getData();
+
+
+
+
+//для мгновенных дат..
+const button_mgnoven = document.createElement('button');
+button_mgnoven.innerHTML = 'Получить новые данные.';
+button_mgnoven.style.position = 'fixed';
+button_mgnoven.style.top = '10px';
+button_mgnoven.style.right = '10px';
+button_mgnoven.style.zIndex = '1000';
+button_mgnoven.style.padding = '10px';
+button_mgnoven.style.border = 'none';
+
+button_mgnoven.addEventListener('click', () => {
+    localStorage.removeItem('cachedJsonData');
+    localStorage.removeItem('lastCacheTime');
+    getData();
+    alert('Данные обновлены. После нажатия ОК будет перезагрузка страницы');
+    location.reload();
+});
+document.body.appendChild(button_mgnoven);
