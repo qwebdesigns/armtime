@@ -67,7 +67,7 @@ findParticipant(currentName);
 
 
 
-
+let percentagesAll;
 function calculatePercentage(min, max, value) {
     return ((value - min) / (max - min)) * 100;
 }
@@ -81,7 +81,7 @@ function getAllParsentages(currentCat, currentDat) {
 
     const min_max_values = currentCat['Weights'];
     //console.log('min_max_values', min_max_values);
-    let percentagesAll = {
+    percentagesAll = {
         "Строгий подъем на бицепс": Math.floor(calculatePercentage(min_max_values["MIN Biceps"], min_max_values["MAX Biceps"], currentDat["Строгий подъем на бицепс"])),
         "Сгибатель кисти": Math.floor(calculatePercentage(min_max_values["MIN Wrist Flexor"], min_max_values["MAX Wrist Flexor"], currentDat["Сгибатель кисти"])),
         "Боковое давление": Math.floor(calculatePercentage(min_max_values["MIN Side Pressure"], min_max_values["MAX Side Pressure"], currentDat["Боковое давление"])),
@@ -132,3 +132,5 @@ function getAllParsentages(currentCat, currentDat) {
     document.getElementById("b_c_circle3_2").getElementsByClassName("bar-fill")[0].style.width = percentagesAll["Боковое давление"] + "%";
 
 }
+
+
