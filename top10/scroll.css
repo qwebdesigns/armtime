@@ -2,7 +2,7 @@ body {
    margin: 0;
    padding: 0;
    height: 100%;
-   background-image: url("../assets/image/body5.jpg");
+   background-image: url("https://github.com/qwebdesigns/armtime/blob/main/assets/image/body5.jpg?raw=true");
    background-size: 100vw;
 }
 
@@ -18,7 +18,7 @@ body {
 .grid-container {
    display: grid;
    grid-template-columns: repeat(5, 1fr);
-   gap: 0px;
+   gap: 2vh;
    width: 80%;
    height: 100vh;
    justify-items: center;

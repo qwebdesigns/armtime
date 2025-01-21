@@ -7,7 +7,7 @@ a {
 }
 
 body {
-   background-image: url("../assets/image/body4.jpg");
+   background-image: url("https://github.com/qwebdesigns/armtime/blob/main/assets/image/body4.jpg?raw=true");
    background-size: 100vw;
    display: flex;
    align-content: center;
@@ -138,7 +138,7 @@ body {
 
 .glavnaya {
    overflow: hidden;
-   background-image: url("../assets/image/fon-1\ \(1\).jpg");
+   background-image: url("https://github.com/qwebdesigns/armtime/blob/main/assets/image/fon-1\ \(1\).jpg?raw=true");
    background-size: 50vh;
    grid-area: glavnaya;
    display: flex;
@@ -150,7 +150,7 @@ body {
 }
 
 .glavnaya:hover {
-   background-image: url("../assets/image/fon-1\ \(2\).jpg");
+   background-image: url("https://github.com/qwebdesigns/armtime/blob/main/assets/image/fon-1\ \(2\).jpg?raw=true");
 
 }
 
@@ -165,7 +165,7 @@ body {
    left: 0;
    width: 100%;
    height: 100%;
-   background: url('../assets/image/AMC_8_NO_RISKNO_STORY#AMC#zsportclub#zclub#armrestling#armsport\ \(1\)-Photoroom.png');
+   background: url('https://github.com/qwebdesigns/armtime/blob/main/assets/image/AMC_8_NO_RISKNO_STORY#AMC#zsportclub#zclub#armrestling#armsport\ \(1\)-Photoroom.png');
    filter: grayscale(100%);
    transition: transform 0.5s ease, filter 0, 5s ease;
    z-index: 1;
@@ -189,7 +189,7 @@ body {
    left: 0;
    width: 100%;
    height: 100%;
-   background: url('../assets/image/AMC_8_NO_RISKNO_STORY#AMC#zsportclub#zclub#armrestling#armsport\ \(1\)-Photoroom.png');
+   background: url('https://github.com/qwebdesigns/armtime/blob/main/assets/image/AMC_8_NO_RISKNO_STORY#AMC#zsportclub#zclub#armrestling#armsport\ \(1\)-Photoroom.png');
    filter: grayscale(100%);
    transition: transform 0.5s ease, filter 0, 5s ease;
 
@@ -198,7 +198,7 @@ body {
 
 .haracter {
    overflow: hidden;
-   background-image: url("../assets/image/fon-2\ \(2\).jpg");
+   background-image: url("https://github.com/qwebdesigns/armtime/blob/main/assets/image/fon-2\ \(2\).jpg?raw=true");
    background-size: 50vh;
    grid-area: haracter;
    display: flex;
@@ -208,7 +208,7 @@ body {
 }
 
 .haracter:hover {
-   background-image: url("../assets/image/fon-E2.jpg");
+   background-image: url("https://github.com/qwebdesigns/armtime/blob/main/assets/image/fon-E2.jpg?raw=true");
 
 }
 
@@ -219,7 +219,7 @@ body {
 
 .top {
    overflow: hidden;
-   background-image: url("../assets/image/fon-1\ \(1\).jpg");
+   background-image: url("https://github.com/qwebdesigns/armtime/blob/main/assets/image/fon-1\ \(1\).jpg?raw=true");
    grid-area: top;
    display: flex;
    justify-content: center;
@@ -227,13 +227,13 @@ body {
 }
 
 .top:hover {
-   background-image: url("../assets/image/fon-1\ \(2\).jpg");
+   background-image: url("https://github.com/qwebdesigns/armtime/blob/main/assets/image/fon-1\ \(2\).jpg?raw=true");
 
 }
 
 .novosty {
    overflow: hidden;
-   background-image: url("../assets/image/fon-2\ \(2\).jpg");
+   background-image: url("https://github.com/qwebdesigns/armtime/blob/main/assets/image/fon-2\ \(2\).jpg?raw=true");
    background-size: 50vh;
    grid-area: novosty;
    display: flex;
@@ -246,7 +246,7 @@ body {
 }
 
 .novosty:hover {
-   background-image: url("../assets/image/fon-1\ \(2\).jpg");
+   background-image: url("https://github.com/qwebdesigns/armtime/blob/main/assets/image/fon-1\ \(2\).jpg?raw=true");
    filter: grayscale(0%);
 
 }
@@ -259,7 +259,7 @@ body {
 
 .svyaz {
    overflow: hidden;
-   background-image: url("../assets/image/fon-1\ \(1\).jpg");
+   background-image: url("https://github.com/qwebdesigns/armtime/blob/main/assets/image/fon-1\ \(1\).jpg?raw=true");
    grid-area: svyaz;
    display: flex;
    align-items: center;
@@ -268,20 +268,21 @@ body {
 }
 
 .svyaz:hover {
-   background-image: url("../assets/image/fon-1\ \(2\).jpg");
+   background-image: url("https://github.com/qwebdesigns/armtime/blob/main/assets/image/fon-1\ \(2\).jpg?raw=true");
+
 
 }
 
 .video {
    overflow: hidden;
-   background-image: url("../assets/image/video2.jpg");
+   background-image: url("https://github.com/qwebdesigns/armtime/blob/main/assets/image/video2.jpg?raw=true");
    grid-area: video;
    background-size: 42.5vh;
    box-shadow: 10px 10px 100px 6px #0000005c;
 }
 
 .video:hover {
-   background-image: url("../assets/image/video2.jpg");
+   background-image: url("https://github.com/qwebdesigns/armtime/blob/main/assets/image/video2.jpg?raw=true");
 
 }
 

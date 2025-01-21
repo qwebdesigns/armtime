@@ -2,7 +2,16 @@ let data = JSON.parse(localStorage.getItem('cachedJsonData'));
 let currentData;
 const filePath = '../settings/category.json';
 let currentCategory;
+let currentName;
 
+const current_url = new URL(window.location.href);
+const linkName = current_url.searchParams.get('member');//.replace(/"/g, '');;
+if (linkName) {
+    currentName = linkName.replace(/"/g, '');
+}
+else{
+    currentName = "Чучкалов Даниил";
+}
 
 function getCurrentCategory(weight) {
     fetch(filePath)
@@ -48,14 +57,13 @@ function findParticipant(fullName) {
             currentData = data[i];
         }
     }
-
+    console.log("currentData", currentData);
     
     getCurrentCategory(currentData["Вес участника"]);
 }
 
 // Пример использования
-const fullName = "Чучкалов Даниил";
-findParticipant(fullName);
+findParticipant(currentName);
 
 
 
@@ -63,6 +71,7 @@ findParticipant(fullName);
 function calculatePercentage(min, max, value) {
     return ((value - min) / (max - min)) * 100;
 }
+
 function getAllParsentages(currentCat, currentDat) {
     if (!currentCat || !currentDat) {
         console.log("Данные не найдены");
@@ -94,7 +103,8 @@ function getAllParsentages(currentCat, currentDat) {
 
 
 
-    document.getElementById("avatar").scr = currentDat["Фото"];
+    document.getElementById("avatar").src = currentDat["Фото"];
+    console.log(currentDat["Фото"]);
     document.getElementById("FIO").innerHTML = currentDat["Фамилия, имя"];
     document.getElementById("podpis").innerHTML = currentDat["Подпись"];
 

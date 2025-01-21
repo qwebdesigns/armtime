@@ -1,26 +1,23 @@
-(async () => {
-    // Получаем данные из функции getData()
-    const data = await getData();
-
-    // Проверяем, что данные существуют и не пусты
-    if (data && data.length > 0) {
-        // Ограничиваем выборку первыми 10 элементами
-        const firstTenMembers = data.slice(0, 10);
-
-        // Перебираем первые 10 элементов и создаем карточки
-        firstTenMembers.forEach(member => {
-            generateCart(member);
-        });
-    } else {
-        console.log('Данные отсутствуют или пусты.');
-    }
-})();
+let data = JSON.parse(localStorage.getItem('cachedJsonData'));
 const cardContainer = document.getElementById('card_conteiner');
 cardContainer.innerHTML = '';
+
+function iterateData() {
+    if(data){
+        for (let i = 0; i < data.length; i++) {
+            generateCart(data[i]);
+        }
+    }
+
+}
+
+iterateData();
+
+
+
+
 function generateCart(member) {
-    // Получаем контейнер для карточек
     
-   
     // Создаем карточку
     const card = document.createElement('div');
     card.classList.add('card');
