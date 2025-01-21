@@ -191,12 +191,6 @@ body {
    opacity: 1;
 }
 
-.circle .blob_circl{
-   filter: drop-shadow(0 0 0.5vh #ffffff);
-}
-.maincircle .blob_circl{
-   filter: drop-shadow(0 0 0.5vh #9900ff);
-}
 
 .bar-container {
 
