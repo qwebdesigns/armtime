@@ -158,6 +158,46 @@ body {
    font-size: 2vh;
 }
 
+.blob_circl {
+   opacity: 0;
+   display: flex;
+   position: absolute;
+   width: max-content;
+   z-index: 1000;
+   background-color: #333;
+   flex-direction: column;
+   flex-wrap: nowrap;
+   align-content: center;
+   justify-content: center;
+   align-items: center;
+   padding: 1vh;
+   border-radius: 10px;
+   transition: all 0.2s ease;
+   top: -60%;
+}
+.blob_circl::after{
+   content: "";
+   position: absolute;
+   width: 0;
+   height: 0;
+   border-left: 1vh solid transparent;
+   border-right: 1vh solid transparent;
+   border-top: 1vh solid #333;
+   top: 100%;
+   left: 50%;
+   transform: translateX(-50%);
+}
+.circle:hover .blob_circl{
+   opacity: 1;
+}
+
+.circle .blob_circl{
+   filter: drop-shadow(0 0 0.5vh #ffffff);
+}
+.maincircle .blob_circl{
+   filter: drop-shadow(0 0 0.5vh #9900ff);
+}
+
 .bar-container {
 
    border-radius: 1.5vh;
