@@ -4,23 +4,26 @@ const cardContainer = document.getElementById('card_conteiner');
 const currentUrl = window.location.href;
 // http://192.168.1.3:5500/categories/sort?sort=1&flag=%22pro%22&category=%2275%22
 const sort = currentUrl.split('sort=')[1].split('&')[0];
-const flag = currentUrl.split('flag=')[1].split('&')[0].replace(/%22/g, '');
+var flag = currentUrl.split('flag=')[1].split('&')[0].replace(/%22/g, '');
 const category = currentUrl.split('category=')[1].replace(/%22/g, '');
 console.log('sort:', sort + ', flag:', flag + ', category:', category);
 const filePath = '../settings/category.json';
 var current_load_category;
-/*
-{
-    "Categories": [
-        {"Category Name": "65"},
-        {"Category Name": "75"},
-        {"Category Name": "85"},
-        {"Category Name": "95"},
-        {"Category Name": "105"},
-        {"Category Name": "105+"}
-    ]
+if (!flag) {
+    alert('Ошибка при загрузке данных... 2x011a');
+}
+else{
+    if (flag === 'pro') {
+        flag = "да";
+    }
+    else if (flag === 'common') {
+        flag = "нет";
+    }
+    else {
+        alert('Ошибка при загрузке данных... 2x012b');
+    }
+}
 
-*/
 
 
 cardContainer.innerHTML = '';
@@ -52,19 +55,18 @@ function getCurrentCategory(categoryLink) {
 
 
 function generateCart(clc) {
-    const min_weight = clc['Minimum Participant Weight'];   // Минимальный вес участника в категории
-    const max_weight = clc['Maximum Participant Weight'];   // Максимальный вес участника в категории
+    const min_weight = Number(clc['Minimum Participant Weight']);   // Минимальный вес участника в категории
+    const max_weight = Number(clc['Maximum Participant Weight']);   // Максимальный вес участника в категории
     const min_max_val = clc['Weights'];                     // Минимальные и максимальные значения для каждого упражнения
     var member_weight;                                      // Вес участника
     var allmembers = [];
     for (let i = 0; i < data.length; i++) {
-        member_weight = data[i]['Вес участника'];
+        member_weight = Number(data[i]['Вес участника']);
         //alert('Имя= ' + data[i]['Фамилия Имя'] + " | Вес= " + member_weight);
-        if (member_weight >= min_weight && member_weight <= max_weight) {
+        if (member_weight >= min_weight && member_weight <= max_weight && data[i]['Профессионал'] == flag) {
             var member_point = calcPersMember(data[i], min_max_val, min_weight, max_weight);
             //console.log("| Вес= "+member_weight+'  | Очко участника=', member_point + " | Имя= " + data[i]['Фамилия, имя']);
             allmembers.push([member_point, data[i]]);
-            
             }
         }
         allmembers.sort(function (a, b) {
