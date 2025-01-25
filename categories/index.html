@@ -1,70 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="slaider.css">
-   <title>ARM TIME</title>
-
+   <title>Топ спорстменов</title>
+   <link rel="stylesheet" href="categories.css">
 </head>
 
 <body>
-   <video class="background-video" autoplay muted loop>
-      <source src="https://github.com/qwebdesigns/armtime/blob/main/assets/video/grey.mp4?raw=true" type="video/mp4">
-      Ваш браузер не поддерживает видео.
-   </video>
-
-
-
-   <div class="OTEC">
-      <div class="parent" id="slider">
-         <div id="arm-man">
-            <div class="foto"><img
-                  src="https://github.com/qwebdesigns/armtime/blob/main/assets/image/noname2.png?raw=true" alt=""></div>
-            <div class="name">
-               <h1>Категория 65</h1>
-               <h2>( МС по армрестлингу, по прозвещу Akimbo69, 2-х кратный чемпион России. )</h2>
-            </div>
-         </div>
-         <div id="arm-man">
-            <div class="foto"><img src="https://github.com/qwebdesigns/armtime/blob/main/assets/image/noname2.png?raw=true" alt=""></div>
-            <div class="name">
-               <h1>Категория 75</h1>
-               <h2>( МС по армрестлингу, по прозвещу Akimbo69, 2-х кратный чемпион России. )</h2>
-            </div>
-         </div>
-         <div id="arm-man">
-            <div class="foto"><img src="https://github.com/qwebdesigns/armtime/blob/main/assets/image/noname2.png?raw=true" alt=""></div>
-            <div class="name">
-               <h1>Категория 85</h1>
-               <h2>( МС по армрестлингу, 7-и кратный чемпион мира, 5-х кратный чемпион России. )</h2>
-            </div>
-         </div>
-         <div id="arm-man">
-            <div class="foto"><img src="https://github.com/qwebdesigns/armtime/blob/main/assets/image/noname2.png?raw=true" alt=""></div>
-            <div class="name">
-               <h1>Категория 95</h1>
-               <h2>( МС по армрестлингу, 7-и кратный чемпион мира, 2-х кратный чемпион России. Призер Европы. )</h2>
-            </div>
-         </div>
-         <div id="arm-man">
-            <div class="foto"><img src="https://github.com/qwebdesigns/armtime/blob/main/assets/image/noname2.png?raw=true" alt=""></div>
-            <div class="name">
-               <h1>Категория 105</h1>
-               <h2>( МС по армрестлингу, 7-и кратный чемпион мира, 2-х кратный чемпион России. )</h2>
-            </div>
-         </div>
-         <div id="arm-man">
-            <div class="foto"><img src="https://github.com/qwebdesigns/armtime/blob/main/assets/image/noname2.png?raw=true" alt=""></div>
-            <div class="name">
-               <h1>Абсолютная </h1>
-               <h2>( МС по армрестлингу, 7-и кратный чемпион мира, 2-х кратный чемпион России. )</h2>
-            </div>
-         </div>
-
+   <div id="mainPage" class="container">
+      <div class="tile-1" onclick="showCategories('pro')">
+         <img src="https://github.com/qwebdesigns/armtime/blob/main/assets/image/prof.png?raw=true" alt="Фото 1">
+         <p>Профессионалы</p>
+         <h3>Список профессиональных спортсменов от (МС) до (ЗМС)</h3>
+      </div>
+      <div class="tile-1" onclick="showCategories('common')">
+         <img src="https://github.com/qwebdesigns/armtime/blob/main/assets/image/uc.png?raw=true" alt="Фото 2">
+         <p>Участники</p>
+         <h3>Список зарегистрированных пользователей содержит перечень участников.</h3>
       </div>
    </div>
+
+   <div id="categoriesPage" class="container" style="display: none;">
+      <button onclick="showMain()" style="background-color: #1c1c1c; border: none; border-radius: 1vh; color: #fff; "> ⮜
+      </button>
+      <div class="tile-2" onclick="showCategory('65')">
+         <img src="https://github.com/qwebdesigns/armtime/blob/main/assets/image/noname2.png?raw=true" alt="Фото 1">
+         <p>Категория 65</p>
+         <h3>Легковесная категория для самых быстрых и техничных армрестлеров.</h3>
+      </div>
+      <div class="tile-2" onclick="showCategory('75')">
+         <img src="https://github.com/qwebdesigns/armtime/blob/main/assets/image/noname2.png?raw=true" alt="Фото 2">
+         <p>Категория 75</p>
+         <h3>Баланс скорости и силы в средней весовой категории.</h3>
+      </div>
+      <div class="tile-2" onclick="showCategory('85')">
+         <img src="https://github.com/qwebdesigns/armtime/blob/main/assets/image/noname2.png?raw=true" alt="Фото 3">
+         <p>Категория 85</p>
+         <h3>Соревнования крепких бойцов с развитой техникой и выносливостью.</h3>
+      </div>
+      <div class="tile-2" onclick="showCategory('95')">
+         <img src="https://github.com/qwebdesigns/armtime/blob/main/assets/image/noname2.png?raw=true" alt="Фото 4">
+         <p>Категория 95</p>
+         <h3>Категория мощных атлетов с высокой физической подготовкой.</h3>
+      </div>
+      <div class="tile-2" onclick="showCategory('105')">
+         <img src="https://github.com/qwebdesigns/armtime/blob/main/assets/image/noname2.png?raw=true" alt="Фото 5">
+         <p>Категория 105</p>
+         <h3>Битва сильнейших, где решают мощь и опыт.</h3>
+      </div>
+      <div class="tile-2" onclick="showCategory('105+')">
+         <img src="https://github.com/qwebdesigns/armtime/blob/main/assets/image/noname2.png?raw=true" alt="Фото 6">
+         <p>Категория 105+</p>
+         <h3>Тяжеловесная категория, где правят сила и непоколебимая мощь.</h3>
+      </div>
+   </div>
+
+   <script src="./design.js"></script>
+   <script src="./logic.js"></script>
 </body>
 
 </html>

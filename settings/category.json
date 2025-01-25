@@ -2,6 +2,7 @@
     "Categories": [
         {
             "Category Name": "65",
+            "Category Title": "Топ 65 kg",
             "Minimum Participant Weight": "55",
             "Maximum Participant Weight": "65",
             "Weights": {
@@ -23,6 +24,7 @@
         },
         {
             "Category Name": "75",
+            "Category Title": "Топ 75 kg",
             "Minimum Participant Weight": "66",
             "Maximum Participant Weight": "75",
             "Weights": {
@@ -44,6 +46,7 @@
         },
         {
             "Category Name": "85",
+            "Category Title": "Топ 85 kg",
             "Minimum Participant Weight": "76",
             "Maximum Participant Weight": "85",
             "Weights": {
@@ -65,6 +68,7 @@
         },
         {
             "Category Name": "95",
+            "Category Title": "Топ 95 kg",
             "Minimum Participant Weight": "86",
             "Maximum Participant Weight": "95",
             "Weights": {
@@ -86,6 +90,7 @@
         },
         {
             "Category Name": "105",
+            "Category Title": "Топ 105 kg",
             "Minimum Participant Weight": "96",
             "Maximum Participant Weight": "105",
             "Weights": {
@@ -106,7 +111,8 @@
             }
         },
         {
-            "Category Name": "Абсолютная (105+)",
+            "Category Name": "105+",
+            "Category Title": "Топ абсолютная 105+ kg",
             "Minimum Participant Weight": "106",
             "Maximum Participant Weight": "999",
             "Weights": {

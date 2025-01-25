@@ -1,0 +1,124 @@
+body {
+   background-image: url("https://github.com/qwebdesigns/armtime/blob/main/assets/image/body4.jpg?raw=true");
+   color: #fff;
+   font-family: Arial, sans-serif;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   margin: 0;
+}
+
+.container {
+   display: flex;
+   gap: 2vh;
+}
+
+.tile-2 {
+   background-image: url("https://github.com/qwebdesigns/armtime/blob/main/assets/image/fon-1 (1).jpg?raw=true");
+   border-radius: 1vh;
+   overflow: hidden;
+   text-align: center;
+   width: 30vh;
+   height: 55vh;
+   transition: transform 0.3s;
+   box-shadow: 0 0.4vh 0.8vh rgba(0, 0, 0, 0.5);
+   text-align: left;
+}
+
+.tile-2:hover {
+   transform: scale(1.05);
+   background-image: url("https://github.com/qwebdesigns/armtime/blob/main/assets/image/fon-1 (2).jpg?raw=true");
+}
+
+.tile-2 img {
+   width: 100%;
+   object-fit: cover;
+}
+
+.tile-2 p {
+   padding-top: 1.5vh;
+   padding-bottom: 1.5vh;
+   padding-left: 2vh;
+   background-color: #171717a9;
+   margin: 0;
+   font-family: Calibri, 'Trebuchet MS', sans-serif;
+   font-weight: 600;
+   font-size: 3vh;
+   border-top-left-radius: 2vh;
+   border-top-right-radius: 2vh;
+}
+
+.tile-2 h3 {
+   font-weight: 600;
+   font-size: 1.5vh;
+   font-family: Calibri, 'Trebuchet MS', sans-serif;
+   background-color: #171717a9;
+   margin: 0;
+   padding-left: 2vh;
+   padding-right: 2vh;
+   padding-bottom: 5vh;
+   color: #ffffff8d;
+}
+
+body {
+   background-image: url("https://github.com/qwebdesigns/armtime/blob/main/assets/image/body4.jpg?raw=true");
+   color: #fff;
+   font-family: Arial, sans-serif;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   margin: 0;
+}
+
+.container {
+   display: flex;
+   gap: 2vh;
+}
+
+.tile-1 {
+   background-image: url("https://github.com/qwebdesigns/armtime/blob/main/assets/image/fon-1 (1).jpg?raw=true");
+   border-radius: 1vh;
+   overflow: hidden;
+   text-align: left;
+   width: 35vh;
+   height: 60vh;
+   transition: transform 0.3s;
+   box-shadow: 0 0.4vh 0.8vh rgba(0, 0, 0, 0.5);
+}
+
+.tile-1:hover {
+   transform: scale(1.05);
+   background-image: url("https://github.com/qwebdesigns/armtime/blob/main/assets/image/fon-1 (2).jpg?raw=true");
+}
+
+.tile-1 img {
+   width: 100%;
+   object-fit: cover;
+}
+
+.tile-1 p {
+   padding-top: 1.5vh;
+   padding-bottom: 1.5vh;
+   padding-left: 2vh;
+   background-color: #171717a9;
+   margin: 0;
+   font-family: Calibri, 'Trebuchet MS', sans-serif;
+   font-weight: 600;
+   font-size: 3vh;
+   border-top-left-radius: 2vh;
+   border-top-right-radius: 2vh;
+}
+
+.tile-1 h3 {
+   font-weight: 600;
+   font-size: 1.5vh;
+   font-family: Calibri, 'Trebuchet MS', sans-serif;
+   background-color: #171717a9;
+   margin: 0;
+   padding-left: 2vh;
+   padding-right: 2vh;
+   padding-bottom: 4vh;
+   color: #ffffff8d;
+}
