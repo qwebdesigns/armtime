@@ -5,12 +5,12 @@ let currentCategory;
 let currentName;
 
 const current_url = new URL(window.location.href);
-const linkName = current_url.searchParams.get('member');//.replace(/"/g, '');;
+const linkName = current_url.searchParams.get('unicod'); //.replace(/"/g, '');;
 if (linkName) {
     currentName = linkName.replace(/"/g, '');
 }
 else{
-    currentName = "Чучкалов Даниил";
+    currentName = "000-000-000-001";
 }
 
 function getCurrentCategory(weight) {
@@ -43,17 +43,17 @@ function getCurrentCategory(weight) {
 
 
 
-function findParticipant(fullName) {
+function findParticipant(memberCode) {
     if (!data) {
         console.log("Данные не найдены");
         return;
     }
-    if (!fullName) {
-        console.log("Укажите имя участника");
+    if (!memberCode) {
+        console.log("Укажите код участника");
         return;
     }
     for (let i = 0; i < data.length; i++) {
-        if (data[i]["Фамилия, имя"] === fullName) {
+        if (data[i]["Код"] === memberCode) {
             currentData = data[i];
         }
     }

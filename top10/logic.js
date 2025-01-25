@@ -49,7 +49,7 @@ function generateCart(member) {
     // Добавляем обработчик события для кнопки
     input.addEventListener('click', () => {
         // Формируем URL с параметром member
-        const url = `../stats/?member=${encodeURIComponent(member["Фамилия, имя"])}`;
+        const url = `../stats/?unicod=${encodeURIComponent(member["Код"])}`;
         // Перенаправляем пользователя на страницу
         window.location.href = url;
     });

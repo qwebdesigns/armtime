@@ -1,6 +1,6 @@
 const API_KEY = 'AIzaSyBipCKTS4-g1jvv-vpmAvyo-MunhprXqwg'; // Замените на ваш API ключ
 const SPREADSHEET_ID = '1hDHsHJJ_ac8gsYUj1obBjYkSp-0tunSsKwd6pLuNjFg'; // Замените на ID вашей таблицы
-const RANGE = 'Main!A2:N100'; // Замените на нужный вам диапазон
+const RANGE = 'Main!A2:O1000'; // Замените на нужный вам диапазон
 
 let jsonData;
 // Ключи
@@ -17,7 +17,8 @@ const keys = [
     "Подтверждение",
     "Профессионал",
     "Карточка",
-    "Фото"
+    "Фото",
+    "Код"
 ];
 
 function convertToJSON(data) {

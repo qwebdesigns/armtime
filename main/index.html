@@ -10,20 +10,43 @@
 
 <body>
 
+
+
+   <div id="codeModal" class="modal" style="display: none;">
+      <div class="modal-content">
+         <span class="close">&times;</span>
+         <h3
+            style="color: #fff; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; padding-bottom: 3vh;">
+            Введите
+            уникальный код</h3>
+         <input type="text" placeholder="Ваш код" class="input-panel" id="codeInput">
+         <br>
+         <button class="button-panel" id="codeAccept">Подтвердить</button>
+      </div>
+   </div>
+
+
+
+
+
+
+
+
    <div class="container">
-      <a class="glavnaya" id="link" href="../categories"> 
-         <div class="image"><img src="https://github.com/qwebdesigns/armtime/blob/main/assets/image/Alan4.png?raw=true" alt=""></div>
+      <a class="glavnaya" id="link" href="../categories">
+         <div class="image"><img src="https://github.com/qwebdesigns/armtime/blob/main/assets/image/Alan4.png?raw=true"
+               alt=""></div>
          <h1 id="text">СПОРТСМЕНЫ</h1>
       </a>
-      <a class="haracter" id="link" href="../stats">
+      <div class="haracter" id="openMenuBtn">
          <div class="image2"><img class="img2"
                src="https://github.com/qwebdesigns/armtime/blob/main/assets/image/triArm5.png?raw=true" alt=""></div>
          <h1 id="text">МОЯ<br>ХАРАКТЕРИСТИКА</h1>
-      </a>
-      <a class="top" id="link" href="../top10"> 
+      </div>
+      <a class="top" id="link" href="../top10">
          <h1 id="liniya-1">Все участники ARM TIME</h1>
       </a>
-      <div class="novosty" id="link" >
+      <div class="novosty" id="link">
          <h1 id="liniya-2">НОВОСТИ - лента новостей <br> Предстоящие <br> армфайты</h1><img
             src="https://github.com/qwebdesigns/armtime/blob/main/assets/image/amc2.png?raw=true" alt="">
       </div>
@@ -35,6 +58,7 @@
    <!-- Элемент loadingotherpage с иконкой загрузки -->
    <div class="loadingotherpage">
       <div class="loading-icon"></div>
+      <div class="loading-text" id="loadingText"></div>
    </div>
 
    <script src="../databaseSript.js"></script>
