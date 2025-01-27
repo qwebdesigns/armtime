@@ -11,23 +11,37 @@ const filePath = '../settings/category.json';
 var current_load_category;
 if (!flag) {
     alert('Ошибка при загрузке данных... 2x011a');
-}
-else{
+} else {
     if (flag === 'pro') {
         flag = "да";
-    }
-    else if (flag === 'common') {
+    } else if (flag === 'common') {
         flag = "нет";
-    }
-    else {
+    } else {
         alert('Ошибка при загрузке данных... 2x012b');
     }
 }
-
+const card_variant = [
+    {
+        'Название карточки': 'Standart',
+        'Цветовой круг': '233',
+        'Основной акцент': "#B301FF"
+    },
+    {
+        'Название карточки': 'Crystal',
+        'Цветовой круг': '177',
+        'Основной акцент': "#93C7FF"
+    },
+    {
+        'Название карточки': 'Gold',
+        'Цветовой круг': '0',
+        'Основной акцент': "#ffcc00"
+    }
+]
 
 
 cardContainer.innerHTML = '';
 getCurrentCategory(category)
+
 function getCurrentCategory(categoryLink) {
     fetch(filePath)
         .then(response => {
@@ -55,10 +69,10 @@ function getCurrentCategory(categoryLink) {
 
 
 function generateCart(clc) {
-    const min_weight = Number(clc['Minimum Participant Weight']);   // Минимальный вес участника в категории
-    const max_weight = Number(clc['Maximum Participant Weight']);   // Максимальный вес участника в категории
-    const min_max_val = clc['Weights'];                     // Минимальные и максимальные значения для каждого упражнения
-    var member_weight;                                      // Вес участника
+    const min_weight = Number(clc['Minimum Participant Weight']); // Минимальный вес участника в категории
+    const max_weight = Number(clc['Maximum Participant Weight']); // Максимальный вес участника в категории
+    const min_max_val = clc['Weights']; // Минимальные и максимальные значения для каждого упражнения
+    var member_weight; // Вес участника
     var allmembers = [];
     for (let i = 0; i < data.length; i++) {
         member_weight = Number(data[i]['Вес участника']);
@@ -67,18 +81,18 @@ function generateCart(clc) {
             var member_point = calcPersMember(data[i], min_max_val, min_weight, max_weight);
             //console.log("| Вес= "+member_weight+'  | Очко участника=', member_point + " | Имя= " + data[i]['Фамилия, имя']);
             allmembers.push([member_point, data[i]]);
-            }
         }
-        allmembers.sort(function (a, b) {
-            return b[0] - a[0];
-        });
-        for (let i = 0; i < allmembers.length; i++) {
-            console.log("| Вес= " + allmembers[i][1]['Вес участника'] + '  | Очко участника=', allmembers[i][0] + " | Имя= " + allmembers[i][1]['Фамилия, имя']);
-            create(allmembers[i][1], allmembers[i][0]); 
-            // Создаем карточку участника
-            // allmembers[i][1] - данные участника
-            // allmembers[i][0] - очки участника
-        };
+    }
+    allmembers.sort(function (a, b) {
+        return b[0] - a[0];
+    });
+    for (let i = 0; i < allmembers.length; i++) {
+        console.log("| Вес= " + allmembers[i][1]['Вес участника'] + '  | Очко участника=', allmembers[i][0] + " | Имя= " + allmembers[i][1]['Фамилия, имя'] + " | Карточка = " + allmembers[i][1]['Карточка']);
+        create(allmembers[i][1], allmembers[i][0]);
+        // Создаем карточку участника
+        // allmembers[i][1] - данные участника
+        // allmembers[i][0] - очки участника
+    };
 }
 
 
@@ -115,9 +129,12 @@ function create(member, points) {
     cardBox.classList.add('card_box');
     cardBox.style.setProperty('--hue', '0deg'); // Установите начальное значение hue
 
+
     // Добавляем блок card_tape
     const cardTape = document.createElement('div');
     cardTape.classList.add('card_tape');
+
+
 
     // Создаем содержимое карточки
     const cardContent = document.createElement('div');
@@ -126,6 +143,9 @@ function create(member, points) {
     // Добавляем фото
     const foto = document.createElement('div');
     foto.classList.add('foto');
+    //card.style.setProperty('--card_acktent', card_variant[i]["Основной акцент"]);
+    foto.style.setProperty('--percentage', points+"%");
+    //style = "--percentage: 85%;" 
     const img = document.createElement('img');
     img.src = member["Фото"] || ''; // Используем изображение по умолчанию, если нет данных
     img.alt = '';
@@ -140,6 +160,11 @@ function create(member, points) {
     h2.textContent = member["Подпись"];
     nameDiv.appendChild(h1);
     nameDiv.appendChild(h2);
+
+    const bigNumber = document.createElement('span');
+    bigNumber.classList.add('big_number');
+    bigNumber.innerHTML = points;
+
 
     // Добавляем кнопку "Анализ"
     const inputDiv = document.createElement('div');
@@ -156,9 +181,37 @@ function create(member, points) {
     });
     inputDiv.appendChild(input);
 
+
+
+
+    var hasCart = false;
+    for (let i = 0; i < card_variant.length; i++) {
+        if (member["Карточка"] == card_variant[i]["Название карточки"] && member["Карточка"] != card_variant[0]["Название карточки"]) {
+            hasCart = true;
+            cardBox.style.setProperty('--hue', card_variant[i]["Цветовой круг"] + 'deg'); // Установите начальное значение hue
+            cardTape.classList.add('grayFilter');
+            card.classList.add('colorCard');
+            card.style.setProperty('--card_acktent', card_variant[i]["Основной акцент"]);
+            break
+        }
+
+    }
+
+    if (hasCart == false) {
+        card.style.setProperty('--card_acktent', card_variant[0]["Основной акцент"]);
+        cardContent.classList.add('contentCenter');
+    }
+
+
+
+
+
+
+
     // Собираем содержимое карточки
     cardContent.appendChild(foto);
     cardContent.appendChild(nameDiv);
+    cardContent.appendChild(bigNumber);
     cardContent.appendChild(inputDiv);
 
     // Добавляем элементы в карточку
@@ -170,12 +223,13 @@ function create(member, points) {
     cardContainer.appendChild(card);
 }
 
-    
+
 
 
 function calculatePercentage(min, max, value) {
     return ((value - min) / (max - min)) * 100;
 }
+
 function calcPersMember(member, min_max, ) {
     const min_max_values = min_max;
     const percentagesAll = {
@@ -206,29 +260,6 @@ function calcPersMember(member, min_max, ) {
 
 
 
-
-
-const card_variant = [
-    "Gold",
-    "Crystal",
-    "Standart"
-    //При необходимости накину ещё варианты карточек
-]
-
-function giveCard(member) {
-    var thisc;
-    var mc = member["Карточка"];
-    if (mc) {
-        for (let i = 0; i < card_variant.length; i++) {
-            if (mc == card_variant[i]) {
-                //далее смотря как сделана карточка
-                thisc;
-            }
-            
-        }
-    }
-    return thisc;
-}
 
 
 
@@ -306,42 +337,3 @@ if (localStorage.getItem('adminmod') == 'true') {
     document.body.appendChild(hue_slider);
     document.body.appendChild(hue_value);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

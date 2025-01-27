@@ -7,6 +7,21 @@ body {
    z-index: 1;
 }
 
+.card {
+   --borderSize: 5px;
+   --borderRadius: 1vh;
+   --gradient_angle: 135deg;
+   --zatemnenie_brightness: 25%;
+
+   --speed_animate: 0.2s;
+   --ring_width: 2vh;
+   --avatar_border_width: 0.2vh;
+   --foto_margin: 2vh;
+   --foto_height: 14vh;
+   --big_number_height: 7vh;
+   --standart_actent_black: #333;
+}
+
 
 
 .papa {

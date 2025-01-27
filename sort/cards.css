@@ -1,29 +1,20 @@
 .card {
-    --borderSize: 5px;
-    --borderRadius: 1vh;
-
-    --gradient_angle: 135deg;
-    --main_gradient: linear-gradient(
-        var(--gradient_angle), /*Угол наклона выдаёться выше.*/
-        rgba(255, 230, 5, 1) 0%,
+    --main_gradient: linear-gradient(var(--gradient_angle),
+            /*Угол наклона выдаёться выше.*/
+        rgba(255, 193, 5, 1) 0%,
         rgba(238, 194, 23, 1) 16%,
-        rgba(249, 231, 93, 1) 55%,
-        rgba(241, 207, 52, 1) 55%,
-        rgba(255, 242, 64, 1) 86%,
-        rgba(247, 199, 17, 1) 86%,
-        rgba(255, 242, 64, 1) 100%);
-    
-    --border_ghost: 7%;
-
-
-
-    --border_gradient: linear-gradient(
-        0deg,
-        #e6d200 0%,
-        #151515 calc(50% - var(--border_ghost)),
-        #151515 calc(50% + var(--border_ghost)),
-        #e6d200 100%
+        rgba(249, 215, 93, 1) 55%,
+        rgba(241, 182, 52, 1) 55%,
+        rgba(255, 213, 64, 1) 86%,
+        rgba(247, 183, 17, 1) 86%,
+        rgba(255, 219, 64, 1) 100%
     );
+
+    --border_gradient: linear-gradient(0deg,
+            #e6d200 0%,
+            #151515 calc(50% - var(--border_ghost)),
+            #151515 calc(50% + var(--border_ghost)),
+            #e6d200 100%);
 
 }
 
@@ -40,7 +31,9 @@
 
 
 
-
+.card>* {
+    transition: all var(--speed_animate) linear;
+}
 .card {
     width: 14vw;
     height: 46vh;
@@ -51,9 +44,9 @@
     justify-content: flex-start;
     align-items: center;
     z-index: 100;
-    transition: all 2s linear;
     overflow: hidden;
 }
+
 .card_box {
     width: 100%;
     min-width: 100%;
@@ -66,22 +59,39 @@
     background: var(--main_gradient);
     filter: hue-rotate(var(--hue));
     /*transition: all 2s linear;*/
-    
+
 }
-.card_tape{
-    width: calc(100% - var(--borderSize));
-    min-width: calc(100% - var(--borderSize));
-    height: calc(100% - var(--borderSize));
-    min-height: calc(100% - var(--borderSize));
-    left: calc(-100% + calc(var(--borderSize) / 2));
+
+.card_tape {
+    width: 100%;
+    min-width: calc(100% + 1px);
+    height: 100%;
+    min-height: 100%;
+    left: -100%;
     position: relative;
     display: block;
-    /*background: var(--main_gradient);*/
-    backdrop-filter: grayscale(100%) brightness(25%);
+    /*background: var(--main_gradient);
+    backdrop-filter: grayscale(100%) brightness(20%);*/
     box-shadow: inset 0px 0px 100px #00000069;
     border-radius: var(--borderRadius);
-    transition: all 0.2s linear;
     z-index: 175;
+    backdrop-filter: grayscale(100%) brightness(20%);
+    box-shadow: inset 0px 0px 100px #00000069;
+}
+
+.grayFilter {
+    width: calc(100% - var(--borderSize)) !important;
+    min-width: calc(100% - var(--borderSize)) !important;
+    height: calc(calc(100% - var(--borderSize) - 1px)) !important;
+    min-height: calc(calc(100% - var(--borderSize) - 1px)) !important;
+    left: calc(-100% + calc(var(--borderSize) / 2));
+}
+.contentCenter{
+    width: 100% !important;
+    min-width: calc(100% + 1px) !important;
+    height: 100% !important;
+    min-height: 100% !important;
+    left: -200% !important;
 }
 .card_content {
     width: 100%;
@@ -100,7 +110,7 @@
     background-size: 100% 100%;
 }
 
-.card:hover .card_tape {
+.card:hover .grayFilter {
     opacity: 0;
 }
 
@@ -129,75 +139,60 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-.card:hover {
-    box-shadow: 10px 10px 100px 6px #0000005c;
+.colorCard:hover input {
+    border-color: var(--standart_actent_black);
+    color: var(--standart_actent_black);
 }
-*/
+
+.colorCard:hover .name h1 {
+    color: var(--standart_actent_black) !important;
+}
+
+.colorCard:hover .name h2 {
+    color: var(--standart_actent_black) !important;
+}
+.colorCard:hover .big_number {
+    color: var(--standart_actent_black) !important;
+}
+.colorCard:hover .foto {
+    background: conic-gradient(var(--standart_actent_black) var(--percentage), var(--card_acktent) var(--percentage));
+}
+.colorCard:hover .foto img {
+    border: var(--avatar_border_width) solid var(--standart_actent_black);
+}
+
+
+
+
+
+
 .foto {
-    height: 35%;
-    width: 100%;
+    margin: var(--foto_margin) 0;
+    height: var(--foto_height);
     display: flex;
-    width: 100%;
     flex-direction: column;
     align-content: center;
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
+    background: conic-gradient(var(--card_acktent) var(--percentage), var(--standart_actent_black) var(--percentage));
+    overflow: hidden;
+    border-radius: 1000px;
+    aspect-ratio: 1;
 
 }
 
 .foto img {
-    width: 50%;
+    width: calc(100% - var(--ring_width));
     aspect-ratio: 1;
     border-radius: 1000px;
     background-color: pink;
+    border: var(--avatar_border_width) solid var(--card_acktent);
+    
 }
 
 .name {
-    height: 27.5%;
+    height: max-content;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -220,10 +215,10 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: #878787;
     line-height: 1vh;
+    margin: 1.5vh 0 0 0 ;
 }
-
 .input {
-    height: 27.5%;
+    flex:2;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -235,16 +230,31 @@
     text-decoration: none;
     height: 5vh;
     width: 7vw;
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    border: dashed 1px #ffffff;
+    color: rgb(255, 255, 255);
+    border: dashed 2px #ffffff;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 2.5vh;
     border-radius: 3vh;
+    background-color: #71717100;
 
 }
 
 .input input:hover {
     border: solid rgb(255, 255, 255);
     box-shadow: 10px 10px 100px 6px #ffffff5c;
+}
+
+.big_number{
+    color: white;
+    width: 100%;
+    flex: 2;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    font-family: monospace;
+    font-weight: bolder;
+    font-size: var(--big_number_height);
 }
