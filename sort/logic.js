@@ -20,23 +20,7 @@ if (!flag) {
         alert('Ошибка при загрузке данных... 2x012b');
     }
 }
-const card_variant = [
-    {
-        'Название карточки': 'Standart',
-        'Цветовой круг': '233',
-        'Основной акцент': "#B301FF"
-    },
-    {
-        'Название карточки': 'Crystal',
-        'Цветовой круг': '177',
-        'Основной акцент': "#93C7FF"
-    },
-    {
-        'Название карточки': 'Gold',
-        'Цветовой круг': '0',
-        'Основной акцент': "#ffcc00"
-    }
-]
+
 
 
 cardContainer.innerHTML = '';
@@ -97,28 +81,6 @@ function generateCart(clc) {
 
 
 
-/*
-
-< div class = "card" >
-    <
-    div class = "card_box"
-style = "--hue: 0deg;" > < /div> <
-    div class = "card_tape" > < /div> <
-    div class = "card_content" >
-    <
-    div class = "foto" > < img src = ""
-alt = "" > < /div> <
-    div class = "name" >
-    <
-    h1 > Олег Черкасов < /h1> <
-    h2 > @inst_armtime < /h2> <
-    /div> <
-    div class = "input" > < input type = "button"
-value = "Анализ" > < /div> <
-    /div> <
-    /div>
-
-*/
 function create(member, points) {
     // Создаем карточку
     const card = document.createElement('div');
