@@ -89,10 +89,17 @@ function admin(a){
     if(g == bps){
         localStorage.setItem('adminmod', 'true');
         console.error('Администраторский режим включен');
+        setTimeout(() => {
+            location.reload();
+        }, 1000);
     }
     else if(g == bps2){
         localStorage.setItem('adminmod', 'false');
         console.error('Администраторский режим выключен');
+        setTimeout(() => {
+            location.reload();
+        }, 1000);
+        
     }
     else{
         console.warn('Неверно указано слово в ковычках.. упс)...');

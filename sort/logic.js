@@ -81,16 +81,53 @@ function generateCart(clc) {
         };
 }
 
+
+
+/*
+
+< div class = "card" >
+    <
+    div class = "card_box"
+style = "--hue: 0deg;" > < /div> <
+    div class = "card_tape" > < /div> <
+    div class = "card_content" >
+    <
+    div class = "foto" > < img src = ""
+alt = "" > < /div> <
+    div class = "name" >
+    <
+    h1 > Олег Черкасов < /h1> <
+    h2 > @inst_armtime < /h2> <
+    /div> <
+    div class = "input" > < input type = "button"
+value = "Анализ" > < /div> <
+    /div> <
+    /div>
+
+*/
 function create(member, points) {
     // Создаем карточку
     const card = document.createElement('div');
     card.classList.add('card');
 
+    // Добавляем блок card_box с hue
+    const cardBox = document.createElement('div');
+    cardBox.classList.add('card_box');
+    cardBox.style.setProperty('--hue', '0deg'); // Установите начальное значение hue
+
+    // Добавляем блок card_tape
+    const cardTape = document.createElement('div');
+    cardTape.classList.add('card_tape');
+
+    // Создаем содержимое карточки
+    const cardContent = document.createElement('div');
+    cardContent.classList.add('card_content');
+
     // Добавляем фото
     const foto = document.createElement('div');
     foto.classList.add('foto');
     const img = document.createElement('img');
-    img.src = member["Фото"]; // Используем изображение по умолчанию, если нет данных
+    img.src = member["Фото"] || ''; // Используем изображение по умолчанию, если нет данных
     img.alt = '';
     foto.appendChild(img);
 
@@ -119,14 +156,20 @@ function create(member, points) {
     });
     inputDiv.appendChild(input);
 
-    // Собираем карточку
-    card.appendChild(foto);
-    card.appendChild(nameDiv);
-    card.appendChild(inputDiv);
+    // Собираем содержимое карточки
+    cardContent.appendChild(foto);
+    cardContent.appendChild(nameDiv);
+    cardContent.appendChild(inputDiv);
+
+    // Добавляем элементы в карточку
+    card.appendChild(cardBox);
+    card.appendChild(cardTape);
+    card.appendChild(cardContent);
 
     // Вставляем карточку в контейнер
     cardContainer.appendChild(card);
 }
+
     
 
 
@@ -165,85 +208,140 @@ function calcPersMember(member, min_max, ) {
 
 
 
+const card_variant = [
+    "Gold",
+    "Crystal",
+    "Standart"
+    //При необходимости накину ещё варианты карточек
+]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-function generateCart(member) {
-    
-    // Создаем карточку
-    const card = document.createElement('div');
-    card.classList.add('card');
-
-    // Добавляем фото
-    const foto = document.createElement('div');
-    foto.classList.add('foto');
-    const img = document.createElement('img');
-    img.src = member["Фото"]; // Используем изображение по умолчанию, если нет данных
-    img.alt = '';
-    foto.appendChild(img);
-
-    // Добавляем имя и username
-    const nameDiv = document.createElement('div');
-    nameDiv.classList.add('name');
-    const h1 = document.createElement('h1');
-    h1.textContent = member["Фамилия, имя"];
-    const h2 = document.createElement('h2');
-    h2.textContent = member["Подпись"];
-    nameDiv.appendChild(h1);
-    nameDiv.appendChild(h2);
-
-    // Добавляем кнопку "Анализ"
-    const inputDiv = document.createElement('div');
-    inputDiv.classList.add('input');
-    const input = document.createElement('input');
-    input.type = 'button';
-    input.value = 'Анализ';
-    // Добавляем обработчик события для кнопки
-    input.addEventListener('click', () => {
-        // Формируем URL с параметром member
-        const url = `../stats/?unicod=${encodeURIComponent(member["Код"])}`;
-        // Перенаправляем пользователя на страницу
-        window.location.href = url;
-    });
-    inputDiv.appendChild(input);
-
-    // Собираем карточку
-    card.appendChild(foto);
-    card.appendChild(nameDiv);
-    card.appendChild(inputDiv);
-
-    // Вставляем карточку в контейнер
-    cardContainer.appendChild(card);
+function giveCard(member) {
+    var thisc;
+    var mc = member["Карточка"];
+    if (mc) {
+        for (let i = 0; i < card_variant.length; i++) {
+            if (mc == card_variant[i]) {
+                //далее смотря как сделана карточка
+                thisc;
+            }
+            
+        }
+    }
+    return thisc;
 }
-*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+if (localStorage.getItem('adminmod') == 'true') {
+    // Создание слайдера для HUE
+    const hue_slider = document.createElement('input');
+    hue_slider.type = 'range';
+    hue_slider.min = '0';
+    hue_slider.max = '360';
+    hue_slider.value = '0';
+    hue_slider.style.position = 'fixed';
+    hue_slider.style.top = '50px';
+    hue_slider.style.right = '10px';
+    hue_slider.style.zIndex = '1000';
+
+    // Создание элемента для отображения значения HUE
+    const hue_value = document.createElement('span');
+    hue_value.innerHTML = `HUE: ${hue_slider.value}`;
+    hue_value.style.position = 'fixed';
+    hue_value.style.top = '75px';
+    hue_value.style.right = '10px';
+    hue_value.style.zIndex = '1000';
+    hue_value.style.padding = '10px';
+    hue_value.style.color = 'white';
+
+    // Обновление отображаемого значения HUE при изменении слайдера
+    hue_slider.addEventListener('input', () => {
+        // Обновляем отображаемое значение HUE
+        hue_value.innerHTML = `HUE: ${hue_slider.value}`;
+
+        // Находим все элементы с классом card_box и изменяем их стиль
+        var cardBoxes = document.querySelectorAll('.card_box');
+        cardBoxes.forEach(cardBox => {
+            cardBox.style.setProperty('--hue', `${hue_slider.value}deg`);
+        });
+    });
+
+    document.body.appendChild(hue_slider);
+    document.body.appendChild(hue_value);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

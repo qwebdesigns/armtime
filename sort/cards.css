@@ -1,0 +1,250 @@
+.card {
+    --borderSize: 5px;
+    --borderRadius: 1vh;
+
+    --gradient_angle: 135deg;
+    --main_gradient: linear-gradient(
+        var(--gradient_angle), /*Угол наклона выдаёться выше.*/
+        rgba(255, 230, 5, 1) 0%,
+        rgba(238, 194, 23, 1) 16%,
+        rgba(249, 231, 93, 1) 55%,
+        rgba(241, 207, 52, 1) 55%,
+        rgba(255, 242, 64, 1) 86%,
+        rgba(247, 199, 17, 1) 86%,
+        rgba(255, 242, 64, 1) 100%);
+    
+    --border_ghost: 7%;
+
+
+
+    --border_gradient: linear-gradient(
+        0deg,
+        #e6d200 0%,
+        #151515 calc(50% - var(--border_ghost)),
+        #151515 calc(50% + var(--border_ghost)),
+        #e6d200 100%
+    );
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.card {
+    width: 14vw;
+    height: 46vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 100;
+    transition: all 2s linear;
+    overflow: hidden;
+}
+.card_box {
+    width: 100%;
+    min-width: 100%;
+    height: 100%;
+    min-height: 100%;
+    position: relative;
+    display: block;
+    z-index: 150;
+    border-radius: calc(var(--borderRadius) + calc(var(--borderSize) / 2));
+    background: var(--main_gradient);
+    filter: hue-rotate(var(--hue));
+    /*transition: all 2s linear;*/
+    
+}
+.card_tape{
+    width: calc(100% - var(--borderSize));
+    min-width: calc(100% - var(--borderSize));
+    height: calc(100% - var(--borderSize));
+    min-height: calc(100% - var(--borderSize));
+    left: calc(-100% + calc(var(--borderSize) / 2));
+    position: relative;
+    display: block;
+    /*background: var(--main_gradient);*/
+    backdrop-filter: grayscale(100%) brightness(25%);
+    box-shadow: inset 0px 0px 100px #00000069;
+    border-radius: var(--borderRadius);
+    transition: all 0.2s linear;
+    z-index: 175;
+}
+.card_content {
+    width: 100%;
+    min-width: 100%;
+    height: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: calc(-200% + var(--borderSize));
+    z-index: 200;
+    background-size: 100% 100%;
+}
+
+.card:hover .card_tape {
+    opacity: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+.card:hover {
+    box-shadow: 10px 10px 100px 6px #0000005c;
+}
+*/
+.foto {
+    height: 35%;
+    width: 100%;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.foto img {
+    width: 50%;
+    aspect-ratio: 1;
+    border-radius: 1000px;
+    background-color: pink;
+}
+
+.name {
+    height: 27.5%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.name h1 {
+    font-size: 2.5vh;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: aliceblue;
+    margin: 0;
+}
+
+.name h2 {
+    font-size: 1.5vh;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #878787;
+    line-height: 1vh;
+}
+
+.input {
+    height: 27.5%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.input input {
+    text-align: center;
+    text-decoration: none;
+    height: 5vh;
+    width: 7vw;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: dashed 1px #ffffff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2.5vh;
+    border-radius: 3vh;
+
+}
+
+.input input:hover {
+    border: solid rgb(255, 255, 255);
+    box-shadow: 10px 10px 100px 6px #ffffff5c;
+}
