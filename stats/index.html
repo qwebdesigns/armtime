@@ -5,7 +5,10 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Профиль</title>
-   <link rel="stylesheet" href="stata.css">
+   <link rel="stylesheet" href="../sort/cards.css">
+   <link rel="stylesheet" href="./stata.css">
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   <script src="../sort/cards.js"></script>
 </head>
 
 <body>
@@ -21,21 +24,42 @@
 
 
    <div class="container">
-      <div class="profile-card">
+      <div class="profile-card card" id="card">
+         <div class="cardBack" id="cardBack"></div>
+         <div class="cardStandart"></div>
+         <div class="cardContent">
+            <div class="profile-card-img" id="circle0">
+               <img src="" alt="Фото профиля" id="avatar">
+            </div>
+            <div class="profile-card-name">
+               <h2 id="FIO">Имя Фамилия</h2>
+               <p id="podpis">@instagram</p>
+
+            </div>
+            <div class="profile-card-class" id="ring0_ball">
+               55
+            </div>
+         </div>
+
+
+
+
+         <!--
          <div class="profile-card-img"> <img src="img/photo_2025-01-17_15-52-47.jpg" alt="Фото профиля" id="avatar">
          </div>
          <div class="profile-card-name">
             <h2 id="FIO">Имя Фамилия</h2>
             <p id="podpis">@instagram</p>
          </div>
-         <div class="profile-card-class"></div>
+         <div class="profile-card-class"></div>-->
       </div>
       <div class="stats">
          <div class="circles">
-            <div id="circle0" class="circle maincircle" style="--percentage: 75%;">
+            <!-- <div id="circle0" class="circle maincircle" style="--percentage: 75%;">
                <span>75</span>
                <div class="blob_circl">Общий балл</div>
-            </div>
+            </div> -->
+            <div class="kg"><span id="member_weight">75кг</span></div>
             <div id="circle1" class="circle" style="--percentage: 60%;">
                <span>60</span>
                <div class="blob_circl">Борьба в крюк</div>
@@ -49,69 +73,18 @@
                <div class="blob_circl">Борьба в трицепс</div>
             </div>
          </div>
-         <div class="bar-container visible" id="b_c_circle1_1">
-            <span>Строгий подъем на бицепс</span>
-            <div class="bar">
-               <div class="bar-fill" style="width: 80%;"></div>
-            </div>
-         </div>
-         <div class="bar-container visible" id="b_c_circle1_2">
-            <span>Сгибатель кисти</span>
-            <div class="bar">
-               <div class="bar-fill" style="width: 65%;"></div>
-            </div>
-         </div>
-         <div class="bar-container visible" id="b_c_circle1_3">
-            <span>Боковое давление</span>
-            <div class="bar">
-               <div class="bar-fill" style="width: 50%;"></div>
-            </div>
-         </div>
-         <div class="bar-container" id="b_c_circle2_1" style="display: none;">
-            <span>Подъем на луч</span>
-            <div class="bar">
-               <div class="bar-fill" style="width: 50%;"></div>
-            </div>
-         </div>
-         <div class="bar-container" id="b_c_circle2_2" style="display: none;">
-            <span>Пронация</span>
-            <div class="bar">
-               <div class="bar-fill" style="width: 50%;"></div>
-            </div>
-         </div>
-         <div class="bar-container" id="b_c_circle2_3" style="display: none;">
-            <span>Отведение</span>
-            <div class="bar">
-               <div class="bar-fill" style="width: 50%;"></div>
-            </div>
-         </div>
-         <div class="bar-container" id="b_c_circle3_1" style="display: none;">
-            <span>Французский жим</span>
-            <div class="bar">
-               <div class="bar-fill" style="width: 50%;"></div>
-            </div>
-         </div>
-         <div class="bar-container" id="b_c_circle3_2" style="display: none;">
-            <span>Боковое давление</span>
-            <div class="bar">
-               <div class="bar-fill" style="width: 50%;"></div>
-            </div>
-         </div>
+
+
          <div class="achievements">
-            <h3>Дополнительные возможности</h3>
-            <div class="achievement-list">
-               <div class="achievement">Топ среди участников</div>
-               <div class="achievement">Изменить свою карту</div>
-               <div class="achievement">Попасть в топ</div>
-            </div>
+            <canvas class="achievements-2" id="myChart"></canvas>
          </div>
-         <div class="edit-button">Редактировать</div>
+         <div class="edit-button" id="share_button">Поделиться профилем</div>
       </div>
    </div>
 
    <script src="../databaseSript.js"></script>
    <script src="./logic.js"></script>
-   <script src="./design.js"></script>
+   <script src="./сhart.js"></script>
 </body>
 
 </html>

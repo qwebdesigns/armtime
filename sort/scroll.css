@@ -26,24 +26,6 @@ body {
    align-items: center;
 }
 
-.card {
-   --main_gradient: linear-gradient(var(--gradient_angle),
-         /*Угол наклона выдаёться выше.*/
-         rgba(255, 193, 5, 1) 0%,
-         rgba(238, 194, 23, 1) 16%,
-         rgba(249, 215, 93, 1) 55%,
-         rgba(241, 182, 52, 1) 55%,
-         rgba(255, 213, 64, 1) 86%,
-         rgba(247, 183, 17, 1) 86%,
-         rgba(255, 219, 64, 1) 100%);
-
-   --border_gradient: linear-gradient(0deg,
-         #e6d200 0%,
-         #151515 calc(50% - var(--border_ghost)),
-         #151515 calc(50% + var(--border_ghost)),
-         #e6d200 100%);
-}
-
 .card>* {
    transition: all var(--speed_animate) linear;
 }
