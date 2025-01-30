@@ -8,31 +8,42 @@ const labels = [
     'Трицепс',
     'Боковое давление'
 ];
+const style_borba = [
+    'Борьба в крюк',
+    'Борьба через верх',
+    'Борьба в трицепс'
+];
+//alert(style_borba);
 var rid_save = [];
 var dataSets = [];
 var dataLabels = [];
 var chart;
 var test;
 var color_act = '#8a2be2';
+var label_ST = style_borba[0];
 const canvas = document.getElementById('myChart');
 canvas.width = canvas.clientWidth;
 canvas.height = canvas.clientHeight;
 document.getElementById('circle1').addEventListener('click', () => {
-    GenerateChart(rid_save, 'circle1');
+    GenerateChart(rid_save, 'circle1', color_act, style_borba[0]);
 });
 document.getElementById('circle2').addEventListener('click', () => {
-    GenerateChart(rid_save, 'circle2');
+    GenerateChart(rid_save, 'circle2', color_act, style_borba[1]);
 });
 document.getElementById('circle3').addEventListener('click', () => {
-    GenerateChart(rid_save, 'circle3');
+    GenerateChart(rid_save, 'circle3', color_act, style_borba[2]);
 });
 
-function GenerateChart(rid, circle, ac) {
+function GenerateChart(rid, circle, ac, st1_label) {
     rid_save = rid;
     let dataSets, dataLabels;
     if(ac){
         color_act = ac;
     }
+    if (st1_label) {
+        label_ST = st1_label;
+    }
+    //alert(st1_label);
 
     if (circle == 'circle1') {
         dataSets = [rid_save[0], rid_save[1], rid_save[2]];
@@ -64,6 +75,143 @@ function GenerateChart(rid, circle, ac) {
     if (chart) {
         chart.destroy();
     }
+
+    let options = {
+        //circumference: 2 * Math.PI, // Полный оборот для сегментов
+        rotation: -Math.PI / 2, // Начальный угол для отрисовки сегментов
+        cutout: '50%', // Размер внутреннего отверстия
+        radius: '60%', // Радиус графика
+        spacing: 0, // Расстояние между сегментами
+        hoverOffset: 25,
+        // Дополнительные настройки
+        responsive: false, // График будет адаптивным
+        maintainAspectRatio: true, // Сохранять соотношение сторон при изменении размера
+        aspectRatio: 1, // Соотношение сторон графика
+        devicePixelRatio: window.devicePixelRatio, // Соотношение пикселей устройства
+
+        locale: 'en-US', // Локаль для форматирования значений
+        indexAxis: 'x', // Ось индексов для категориальных данных
+        skipNull: true, // Пропускать нулевые значения
+        segment: { // Настройки сегментов
+            borderColor: 'blue', // Цвет границы сегментов
+            borderWidth: 2 // Ширина границы сегментов
+        },
+
+        // Настройки анимации
+        animation: {
+            duration: 500, // Продолжительность анимации в миллисекундах
+            easing: 'easeInOutQuart', // Эффект анимации
+            animateRotate: true, // Анимация вращения
+            animateScale: false // Анимация масштабирования
+        },
+
+        // Настройки всплывающих подсказок
+
+
+        plugins: {
+            tooltip: {
+                enabled: true, // Включить или отключить всплывающие подсказки
+                mode: 'nearest', // Режим подсказки: 'index', 'nearest', 'dataset', 'point'
+                intersect: true, // Проверка пересечения для подсказок
+                backgroundColor: 'rgba(255, 255, 255, 0.55)', // Цвет фона всплывающей подсказки
+                bodyColor: 'black', // Цвет заголовка всплывающей подсказки
+                titleFont: {
+                    display: false,
+                    size: 16, // Размер шрифта заголовка
+                    family: 'Arial', // Шрифт заголовка
+                    style: 'italic', // Стиль шрифта заголовка
+                    weight: 'bold', // Толщина шрифта заголовка
+                },
+                bodyFont: {
+                    size: 14, // Размер шрифта тела подсказки (например, 12, 14, 16 и т.д.)
+                    family: 'Arial', // Шрифт тела подсказки (например, 'Arial', 'Verdana', 'Helvetica' и т.д.)
+                    style: 'normal', // Стиль шрифта тела подсказки ('normal', 'italic', 'oblique')
+                    weight: 'bolder', // Толщина шрифта тела подсказки ('normal', 'bold', 'bolder', 'lighter', или значения от 100 до 900)
+                },
+                footerFont: {
+                    size: 12, // Размер шрифта нижнего колонтитула подсказки
+                    family: 'Arial', // Шрифт нижнего колонтитула подсказки
+                    style: 'normal', // Стиль шрифта нижнего колонтитула
+                    weight: 'normal', // Толщина шрифта нижнего колонтитула
+                },
+                padding: 10, // Внутренний отступ подсказки
+                displayColors: false, // Показывать цветные блоки рядом с текстом подсказки
+                borderColor: 'black', // Цвет границы подсказки
+                borderWidth: 1, // Ширина границы подсказки
+                caretSize: 5, // Размер указателя подсказки (треугольника)
+                cornerRadius: 10, // Радиус скругления углов подсказки
+                xPadding: 10, // Горизонтальный внутренний отступ
+                yPadding: 10, // Вертикальный внутренний отступ
+                callbacks: {
+                    // Коллбэк для кастомизации текста подсказки
+                    label: function (tooltipItem, data) {
+                        //console.log('--------------= ' + tooltipItem.formattedValue);
+                        //test = tooltipItem;
+                        //console.log('--------------= ' + data);
+
+                        //const dataset = data.datasets[tooltipItem.dataIndex];
+                        const value = tooltipItem.formattedValue + " баллов";
+                        return `${value}`;
+                    },
+                    title: function () {
+                        return ''; // Возвращаем пустую строку, чтобы убрать заголовок
+                    },
+                    footer: function () {
+                        return ''; // Возвращаем пустую строку, чтобы убрать нижний колонтитул
+                    }
+                }
+            },
+            title: {
+                display: true, // Отображать заголовок
+                text: label_ST, // Текст заголовка
+                font: {
+                    size: 20, // Размер шрифта заголовка (например, 16, 18, 20 и т.д.)
+                    family: 'Arial', // Шрифт заголовка (например, 'Arial', 'Verdana', 'Helvetica' и т.д.)
+                    style: 'normal', // Стиль шрифта заголовка ('normal', 'italic', 'oblique')
+                    weight: 'bolder', // Толщина шрифта заголовка ('normal', 'bold', 'bolder', 'lighter', или значения от 100 до 900)
+                    lineHeight: 1, // Высота строки заголовка (например, 1, 1.2, 1.5 и т.д.)
+                },
+                color: 'white', // Цвет текста заголовка
+                align: 'center', // Выравнивание заголовка ('start', 'center', 'end')
+                padding: {
+                    top: 40, // Внутренний отступ сверху (например, 10, 15 и т.д.)
+                    bottom: 0 // Внутренний отступ снизу (например, 10, 15 и т.д.)
+                }
+            },
+            legend: {
+                display: false, // Отображать легенду
+                position: 'top', // Положение легенды: 'top', 'left', 'bottom', 'right'
+                align: 'center', // Выравнивание легенды: 'start', 'center', 'end'
+                labels: {
+                    boxWidth: 40, // Ширина коробки цвета
+                    padding: 10, // Отступы внутри легенды
+                    usePointStyle: false, // Использовать стили точек для легенды
+                    color: 'white', // Цвет текста легенды
+                    font: {
+                        size: 12, // Размер шрифта текста легенды
+                        style: 'normal', // Стиль шрифта: 'normal', 'italic', 'oblique'
+                        family: 'Arial', // Семейство шрифта
+                        weight: 'normal' // Толщина шрифта: 'normal', 'bold', 'bolder', 'lighter', etc.
+                    }
+                }
+            },
+        }
+    };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     chart = new Chart(canvas, {
         type: 'doughnut',
@@ -154,124 +302,3 @@ function GenerateChart(rid, circle, ac) {
 }
 
 
-const options = {
-    //circumference: 2 * Math.PI, // Полный оборот для сегментов
-    rotation: -Math.PI / 2, // Начальный угол для отрисовки сегментов
-    cutout: '50%', // Размер внутреннего отверстия
-    radius: '60%', // Радиус графика
-    spacing: 0, // Расстояние между сегментами
-    hoverOffset: 25,
-    // Дополнительные настройки
-    responsive: false, // График будет адаптивным
-    maintainAspectRatio: true, // Сохранять соотношение сторон при изменении размера
-    aspectRatio: 1, // Соотношение сторон графика
-    devicePixelRatio: window.devicePixelRatio, // Соотношение пикселей устройства
-
-    locale: 'en-US', // Локаль для форматирования значений
-    indexAxis: 'x', // Ось индексов для категориальных данных
-    skipNull: true, // Пропускать нулевые значения
-    segment: { // Настройки сегментов
-        borderColor: 'blue', // Цвет границы сегментов
-        borderWidth: 2 // Ширина границы сегментов
-    },
-
-    // Настройки анимации
-    animation: {
-        duration: 500, // Продолжительность анимации в миллисекундах
-        easing: 'easeInOutQuart', // Эффект анимации
-        animateRotate: true, // Анимация вращения
-        animateScale: false // Анимация масштабирования
-    },
-
-    // Настройки всплывающих подсказок
-
-
-    plugins: {
-        tooltip: {
-            enabled: true, // Включить или отключить всплывающие подсказки
-            mode: 'nearest', // Режим подсказки: 'index', 'nearest', 'dataset', 'point'
-            intersect: true, // Проверка пересечения для подсказок
-            backgroundColor: 'rgba(255, 255, 255, 0.55)', // Цвет фона всплывающей подсказки
-            bodyColor: 'black', // Цвет заголовка всплывающей подсказки
-            titleFont: {
-                display: false,
-                size: 16, // Размер шрифта заголовка
-                family: 'Arial', // Шрифт заголовка
-                style: 'italic', // Стиль шрифта заголовка
-                weight: 'bold', // Толщина шрифта заголовка
-            },
-            bodyFont: {
-                size: 14, // Размер шрифта тела подсказки (например, 12, 14, 16 и т.д.)
-                family: 'Arial', // Шрифт тела подсказки (например, 'Arial', 'Verdana', 'Helvetica' и т.д.)
-                style: 'normal', // Стиль шрифта тела подсказки ('normal', 'italic', 'oblique')
-                weight: 'bolder', // Толщина шрифта тела подсказки ('normal', 'bold', 'bolder', 'lighter', или значения от 100 до 900)
-            },
-            footerFont: {
-                size: 12, // Размер шрифта нижнего колонтитула подсказки
-                family: 'Arial', // Шрифт нижнего колонтитула подсказки
-                style: 'normal', // Стиль шрифта нижнего колонтитула
-                weight: 'normal', // Толщина шрифта нижнего колонтитула
-            },
-            padding: 10, // Внутренний отступ подсказки
-            displayColors: false, // Показывать цветные блоки рядом с текстом подсказки
-            borderColor: 'black', // Цвет границы подсказки
-            borderWidth: 1, // Ширина границы подсказки
-            caretSize: 5, // Размер указателя подсказки (треугольника)
-            cornerRadius: 10, // Радиус скругления углов подсказки
-            xPadding: 10, // Горизонтальный внутренний отступ
-            yPadding: 10, // Вертикальный внутренний отступ
-            callbacks: {
-                // Коллбэк для кастомизации текста подсказки
-                label: function (tooltipItem, data) {
-                    //console.log('--------------= ' + tooltipItem.formattedValue);
-                    //test = tooltipItem;
-                    //console.log('--------------= ' + data);
-
-                    //const dataset = data.datasets[tooltipItem.dataIndex];
-                    const value = tooltipItem.formattedValue + " баллов";
-                    return `${value}`;
-                },
-                title: function () {
-                    return ''; // Возвращаем пустую строку, чтобы убрать заголовок
-                },
-                footer: function () {
-                    return ''; // Возвращаем пустую строку, чтобы убрать нижний колонтитул
-                }
-            }
-        },
-        title: {
-            display: true, // Отображать заголовок
-            text: 'Стиль борьбы', // Текст заголовка
-            font: {
-                size: 25, // Размер шрифта заголовка (например, 16, 18, 20 и т.д.)
-                family: 'Arial', // Шрифт заголовка (например, 'Arial', 'Verdana', 'Helvetica' и т.д.)
-                style: 'normal', // Стиль шрифта заголовка ('normal', 'italic', 'oblique')
-                weight: 'bolder', // Толщина шрифта заголовка ('normal', 'bold', 'bolder', 'lighter', или значения от 100 до 900)
-                lineHeight: 1, // Высота строки заголовка (например, 1, 1.2, 1.5 и т.д.)
-            },
-            color: 'white', // Цвет текста заголовка
-            align: 'center', // Выравнивание заголовка ('start', 'center', 'end')
-            padding: {
-                top: 40, // Внутренний отступ сверху (например, 10, 15 и т.д.)
-                bottom: 0 // Внутренний отступ снизу (например, 10, 15 и т.д.)
-            }
-        },
-        legend: {
-            display: false, // Отображать легенду
-            position: 'top', // Положение легенды: 'top', 'left', 'bottom', 'right'
-            align: 'center', // Выравнивание легенды: 'start', 'center', 'end'
-            labels: {
-                boxWidth: 40, // Ширина коробки цвета
-                padding: 10, // Отступы внутри легенды
-                usePointStyle: false, // Использовать стили точек для легенды
-                color: 'white', // Цвет текста легенды
-                font: {
-                    size: 12, // Размер шрифта текста легенды
-                    style: 'normal', // Стиль шрифта: 'normal', 'italic', 'oblique'
-                    family: 'Arial', // Семейство шрифта
-                    weight: 'normal' // Толщина шрифта: 'normal', 'bold', 'bolder', 'lighter', etc.
-                }
-            }
-        },
-    }
-};
