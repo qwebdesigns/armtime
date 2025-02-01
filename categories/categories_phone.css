@@ -6,13 +6,18 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      height: 100%;
       margin: 0;
    }
 
    .container {
       display: flex;
       gap: 2vh;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
    }
 
    .tile-2 {
@@ -20,8 +25,8 @@
       border-radius: 1vh;
       overflow: hidden;
       text-align: center;
-      width: 30vh;
-      height: 55vh;
+      width: 21vh;
+      height: 41vh;
       transition: transform 0.3s;
       box-shadow: 0 0.4vh 0.8vh rgba(0, 0, 0, 0.5);
       text-align: left;
@@ -45,14 +50,14 @@
       margin: 0;
       font-family: Calibri, "Trebuchet MS", sans-serif;
       font-weight: 600;
-      font-size: 3vh;
+      font-size: 2.5vh;
       border-top-left-radius: 2vh;
       border-top-right-radius: 2vh;
    }
 
    .tile-2 h3 {
       font-weight: 600;
-      font-size: 1.5vh;
+      font-size: 1.3vh;
       font-family: Calibri, "Trebuchet MS", sans-serif;
       background-color: #171717a9;
       margin: 0;
@@ -69,7 +74,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      height: 100%;
       margin: 0;
    }
 
@@ -83,8 +88,8 @@
       border-radius: 1vh;
       overflow: hidden;
       text-align: left;
-      width: 35vh;
-      height: 60vh;
+      width: 25vh;
+      height: 46vh;
       transition: transform 0.3s;
       box-shadow: 0 0.4vh 0.8vh rgba(0, 0, 0, 0.5);
    }
@@ -107,14 +112,14 @@
       margin: 0;
       font-family: Calibri, "Trebuchet MS", sans-serif;
       font-weight: 600;
-      font-size: 3vh;
+      font-size: 2.5vh;
       border-top-left-radius: 2vh;
       border-top-right-radius: 2vh;
    }
 
    .tile-1 h3 {
       font-weight: 600;
-      font-size: 1.5vh;
+      font-size: 1.3vh;
       font-family: Calibri, "Trebuchet MS", sans-serif;
       background-color: #171717a9;
       margin: 0;
