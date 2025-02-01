@@ -19,7 +19,7 @@
    .grid-container {
       display: flex;
       grid-template-columns: repeat(5, 1fr);
-      gap: 2vh;
+      gap: 2vw;
       width: 80%;
       height: 100vh;
       justify-items: center;
