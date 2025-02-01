@@ -382,7 +382,8 @@
    #text {
       padding: 0vh 0vh 1vh 1vh;
       z-index: 2;
-      padding-right: 9.5vh;
+      /*padding-right: 9.5vh;*/
+      width: calc(100% - 1vh);
    }
 
    /* Стили для элемента loadingotherpage */

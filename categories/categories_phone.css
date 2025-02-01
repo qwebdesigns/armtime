@@ -88,8 +88,8 @@
       border-radius: 1vh;
       overflow: hidden;
       text-align: left;
-      width: 25vh;
-      height: 46vh;
+      width: 21vh;
+      height: 41vh;
       transition: transform 0.3s;
       box-shadow: 0 0.4vh 0.8vh rgba(0, 0, 0, 0.5);
    }
