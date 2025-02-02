@@ -1,7 +1,7 @@
 @media only screen and (max-width: 600px) {
         .card {
                 /* Границы и угол */
-                --borderSize: 0px;
+                --borderSize: 3px;
                 /* Толщина границы карточки */
                 --borderRadius: 1vh;
                 /* Радиус закругления углов карточки */
@@ -32,7 +32,7 @@
                 /* Скейл для аватарки в профиле*/
 
                 /* Размеры текста и акцент */
-                --big_number_height: 5vh;
+                --big_number_height: 4vh;
                 /* Высота больших цифр */
                 --standart_actent_black: #333;
                 /* Стандартный акцентный темный цвет */

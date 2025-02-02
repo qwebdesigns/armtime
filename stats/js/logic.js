@@ -149,6 +149,7 @@ function getAllParsentages(currentCat, currentDat) {
                 document.getElementById('share_button').classList.add('big_number');
                 document.getElementsByClassName('cardStandart')[0].remove();
                 document.getElementsByClassName('cardContent')[0].classList.add('isDeleteStandartCard');
+                document.getElementById('background_vid').style.setProperty('--card_acktent', card_variant[i]["Основной акцент"]);
             }
         }
 
