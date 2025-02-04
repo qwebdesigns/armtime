@@ -20,7 +20,7 @@ if (!flag) {
         alert('Ошибка при загрузке данных... 2x012b');
     }
 }
-
+const accept = 'TRUE';
 
 
 cardContainer.innerHTML = '';
@@ -61,7 +61,7 @@ function generateCart(clc) {
     for (let i = 0; i < data.length; i++) {
         member_weight = Number(data[i]['Вес участника']);
         //alert('Имя= ' + data[i]['Фамилия Имя'] + " | Вес= " + member_weight);
-        if (member_weight >= min_weight && member_weight <= max_weight && data[i]['Профессионал'] == flag) {
+        if (member_weight >= min_weight && member_weight <= max_weight && data[i]['Профессионал'] == flag && data[i]['Подтверждение'] == accept) {
             var member_point = calcPersMember(data[i], min_max_val, min_weight, max_weight);
             //console.log("| Вес= "+member_weight+'  | Очко участника=', member_point + " | Имя= " + data[i]['Фамилия, имя']);
             allmembers.push([member_point, data[i]]);
@@ -71,7 +71,7 @@ function generateCart(clc) {
         return b[0] - a[0];
     });
     for (let i = 0; i < allmembers.length; i++) {
-        console.log("| Вес= " + allmembers[i][1]['Вес участника'] + '  | Очко участника=', allmembers[i][0] + " | Имя= " + allmembers[i][1]['Фамилия, имя'] + " | Карточка = " + allmembers[i][1]['Карточка']);
+        console.log("| Вес= " + allmembers[i][1]['Вес участника'] + '  | Очко участника=', allmembers[i][0] + " | Имя= " + allmembers[i][1]['Фамилия, имя'] + " | Карточка = " + allmembers[i][1]['Карточка'] + " | Подтверждение = "  + allmembers[i][1]['Подтверждение']);
         create(allmembers[i][1], allmembers[i][0]);
         // Создаем карточку участника
         // allmembers[i][1] - данные участника

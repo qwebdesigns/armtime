@@ -10,6 +10,7 @@ links.forEach(link => {
 
         // Симуляция загрузки (например, переход на другую страницу через 2 секунды)
         setTimeout(() => {
+            loadingElement.style.display = 'none'; // скрываем элемент
             window.location.href = this.href; // Переход по ссылке
         }, 1200);
     });
