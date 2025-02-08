@@ -5,9 +5,9 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Топ спорстменов</title>
-   <link rel="stylesheet" href="categories.css">
-   <link rel="stylesheet" href="categories_phone.css">
-   <link rel="stylesheet" href="../reclama.css">
+   <link rel="stylesheet" href="../web_styles/CategoryPage.css">
+   <link rel="stylesheet" href="../web_styles/CategoryPage_phone.css">
+   <link rel="stylesheet" href="../web_styles/Reclama.css">
    <!-- Yandex.RTB -->
    <script>
       window.yaContextCb = window.yaContextCb || []
@@ -66,6 +66,7 @@
 
 
    <div class="reclama_w" id="yandex_rtb_R-A-13995541-5"></div>
+   <div class="recl_mobile_top" id="yandex_rtb_R-A-13995541-8"></div>
    <!-- Yandex.RTB R-A-13995541-5 -->
    <script>
       window.yaContextCb.push(() => {
@@ -77,8 +78,18 @@
          })
       })
    </script>
-   <script src="./design.js"></script>
-   <script src="./logic.js"></script>
+   <!-- Yandex.RTB R-A-13995541-8 -->
+   <script>
+      window.yaContextCb.push(() => {
+         Ya.Context.AdvManager.render({
+            "blockId": "R-A-13995541-8",
+            "renderTo": "yandex_rtb_R-A-13995541-8",
+            "type": "topAd"
+         })
+      })
+   </script>
+   <script src="../web_scripts/CategoryPage_Design.js"></script>
+   <script src="../web_scripts/CategoryPage_Logic.js"></script>
 </body>
 
 </html>

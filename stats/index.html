@@ -5,13 +5,13 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Профиль</title>
-   <link rel="stylesheet" href="./css/cards_stats_phone.css">
-   <link rel="stylesheet" href="./css/cards_stats_pc.css">
-   <link rel="stylesheet" href="./css/stata.css">
-   <link rel="stylesheet" href="./css/stata_phone.css">
-   <link rel="stylesheet" href="../reclama.css">
+   <link rel="stylesheet" href="../web_styles/cards_stats_phone.css">
+   <link rel="stylesheet" href="../web_styles/cards_stats_pc.css">
+   <link rel="stylesheet" href="../web_styles/StatsPage.css">
+   <link rel="stylesheet" href="../web_styles/StatsPage_phone.css">
+   <link rel="stylesheet" href="../web_styles/Reclama.css">
    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-   <script src="../settings/cards.js"></script>
+   <script src="../web_scripts/Settings_Card.js"></script>
    <!-- Yandex.RTB -->
    <script>
       window.yaContextCb = window.yaContextCb || []
@@ -20,17 +20,13 @@
 </head>
 
 <body>
+
    <div class="background" id="background_vid">
       <video class="background-video" autoplay muted loop>
          <source src="https://github.com/qwebdesigns/armtime/blob/main/assets/video/grey.mp4?raw=true" type="video/mp4">
       </video>
       <div class="color-overlay"></div>
    </div>
-
-
-
-
-
 
    <div class="container">
       <div class="profile-card card" id="card">
@@ -91,9 +87,21 @@
       </div>
    </div>
 
-   <div class="reclama_w" id="yandex_rtb_R-A-13995541-4">
 
-   </div>
+
+
+
+
+
+
+
+
+
+
+
+   <div class="reclama_w" id="yandex_rtb_R-A-13995541-4"></div>
+   <!--<div class="reclama_w" id="yandex_rtb_R-A-13995541-2"></div>-->
+   <div class="recl_mobile_top" id="yandex_rtb_R-A-13995541-7"></div>
    <!-- Yandex.RTB R-A-13995541-4 -->
    <script>
       window.yaContextCb.push(() => {
@@ -104,12 +112,33 @@
             "platform": "desktop"
          })
       })
+   
    </script>
-
-   <script src="../databaseSript.js"></script>
-   <script src="./js/logic.js"></script>
-   <script src="./js/graf.js"></script>
-   <script src="./js/des.js"></script>
+   <!-- Yandex.RTB R-A-13995541-2 
+   <script>
+      window.yaContextCb.push(() => {
+         Ya.Context.AdvManager.render({
+            "blockId": "R-A-13995541-2",
+            "renderTo": "yandex_rtb_R-A-13995541-2",
+            "type": "floorAd",
+            "platform": "touch"
+         })
+      })
+   </script>-->
+   <!-- Yandex.RTB R-A-13995541-7 -->
+   <script>
+      window.yaContextCb.push(() => {
+         Ya.Context.AdvManager.render({
+            "blockId": "R-A-13995541-7",
+            "renderTo": "yandex_rtb_R-A-13995541-7",
+            "type": "topAd"
+         })
+      })
+   </script>
+   <script src="../web_scripts/databaseSript.js"></script>
+   <script src="../web_scripts/StatsPage_Logic.js"></script>
+   <script src="../web_scripts/StatsPage_Graf.js"></script>
+   <script src="../web_scripts/StatsPage_Design.js"></script>
 </body>
 
 </html>

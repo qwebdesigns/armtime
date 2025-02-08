@@ -7,7 +7,7 @@ const sort = currentUrl.split('sort=')[1].split('&')[0];
 var flag = currentUrl.split('flag=')[1].split('&')[0].replace(/%22/g, '');
 const category = currentUrl.split('category=')[1].replace(/%22/g, '');
 console.log('sort:', sort + ', flag:', flag + ', category:', category);
-const filePath = '../settings/category.json';
+const filePath = '../web_scripts/Settings_CurrentCategory.json';
 var current_load_category;
 if (!flag) {
     alert('Ошибка при загрузке данных... 2x011a');

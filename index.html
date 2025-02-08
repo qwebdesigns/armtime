@@ -1,151 +1,132 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Загрузка...</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="../web_styles/MainPage.css">
+   <link rel="stylesheet" href="../web_styles/MainPage_phone.css">
+   <link rel="stylesheet" href="../web_styles/Reclama.css">
+   <title>ARM TIME</title>
 
-        body {
-            display: flex;
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            background-color: black;
-            overflow: hidden;
-        }
 
-        canvas {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            background-color: rgb(0, 0, 0);
-            z-index: 1;
-        }
-    </style>
-    <link rel="stylesheet" href="./reclama.css">
-    <!-- Yandex.RTB -->
-    <script src="https://yandex.ru/ads/system/context.js" async></script>
-    <script>
-        window.yaContextCb = window.yaContextCb || []
-    </script>
-    <meta name="yandex-verification" content="c007aaf83a665512" />
+   
+   <!-- Yandex.RTB -->
+   <script src="https://yandex.ru/ads/system/context.js" async></script>
+   <script>window.yaContextCb = window.yaContextCb || []</script>
+   
 </head>
 
 <body>
-    <canvas id="myCanvas"></canvas>
-    <div class="reclama_w" id="yandex_rtb_R-A-13995541-2"></div>
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- Yandex.RTB R-A-13995541-2 -->
-    <script>
-        window.yaContextCb.push(() => {
-            Ya.Context.AdvManager.render({
-                "blockId": "R-A-13995541-2",
-                "renderTo": "yandex_rtb_R-A-13995541-2",
-                "type": "floorAd",
-                "platform": "touch"
-            })
-        })
-    </script>
-
-
-
-    <script>
-        var canvas = document.getElementById('myCanvas');
-        canvas.width = canvas.clientWidth;
-        canvas.height = canvas.clientHeight;
-
-        var context = canvas.getContext('2d');
-        var polygonSizeFactor = 0.05; // Фактор размера многоугольника
-        var numberOfPoints = 150; // Количество точек
-        var angleIncrement = Math.PI / 360; // Увеличение угла
-        var pointSize = 1; // Размер точки
-        var fillColor = 'white'; // Цвет заливки
-        var mergeDistanceFactor = 0.005; // Процент от минимального размера канваса для слияния точек
-        var speedFactor = 975 / 1000; // Настройка скорости шариков, 0.99 - медленно, меньшее значение - быстрее
-
-        var size = Math.max(canvas.width, canvas.height) / 2; // Размер круга для появления точек
-        var mergeDistance = Math.max(canvas.width, canvas.height) * mergeDistanceFactor;
-        context.fillStyle = fillColor;
-
-        var points = [];
-        for (var i = 0; i < numberOfPoints; i++) {
-            var angle = (i * 2 * Math.PI) / numberOfPoints;
-            var x = (size + 50) *
-                Math.cos(angle);
-            var y = (size + 50) * Math.sin(angle);
-            points.push({
-                x: x,
-                y: y
-            });
-        }
-
-        function draw() {
-            points = points.filter(function (point, index) {
-                context.beginPath();
-                context.arc(point.x + canvas.width / 2,
-                    point.y + canvas.height / 2, pointSize, 0, 2 * Math.PI);
-                context.fill();
-                var newX = point.x *
-                    Math.cos(angleIncrement) + point.y * Math.sin(angleIncrement);
-                var newY = -point.x * Math.sin(angleIncrement) +
-                    point.y * Math.cos(angleIncrement);
-                point.x = newX * speedFactor; // Уменьшаем размер для слетания к центру
-                point.y = newY * speedFactor;
-                for (var j = index + 1; j < points.length; j++) {
-                    var otherPoint = points[j];
-                    var
-                        distance = Math.sqrt(Math.pow(point.x - otherPoint.x, 2) + Math.pow(point.y - otherPoint
-                            .y, 2));
-                    if (distance <
-                        mergeDistance && points.length > 3) {
-                        // Объединяем точки
-                        point.x = (point.x + otherPoint.x) / 2;
-                        point.y = (point.y + otherPoint.y) / 2;
-                        // Удаляем другую точку
-                        points.splice(j, 1);
-                        break;
-                    }
-                }
-
-                var distanceToCenter = Math.sqrt(Math.pow(point.x, 2) + Math.pow(point.y, 2));
-                return distanceToCenter > 1; // Удаляем точки, когда они достигают центра
-            });
-
-
-
-            if (points.length > 3) {
-                requestAnimationFrame(draw);
-            } else {
-                points = []; // Удаляем оставшиеся три точки
-                window.location.href = './main/';
+   <!-- Yandex.Metrika counter -->
+   <script type="text/javascript">
+      (function (m, e, t, r, i, k, a) {
+         m[i] = m[i] || function () {
+            (m[i].a = m[i].a || []).push(arguments)
+         };
+         m[i].l = 1 * new Date();
+         for (var j = 0; j < document.scripts.length; j++) {
+            if (document.scripts[j].src === r) {
+               return;
             }
-        }
-        
+         }
+         k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(
+            k, a)
+      })
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+      ym(99843991, "init", {
+         clickmap: true,
+         trackLinks: true,
+         accurateTrackBounce: true,
+         webvisor: true
+      });
+   </script>
+   <noscript>
+      <div><img src="https://mc.yandex.ru/watch/99843991" style="position:absolute; left:-9999px;" alt="" /></div>
+   </noscript>
+   <!-- /Yandex.Metrika counter -->
 
 
-        draw();
-    </script>
+   <div id="codeModal" class="modal" style="display: none;">
+      <div class="modal-content">
+         <span class="close">&times;</span>
+         <h3
+            style="color: #fff; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; padding-bottom: 3vh;">
+            Введите
+            уникальный код</h3>
+         <input type="text" placeholder="Ваш код" class="input-panel" id="codeInput">
+         <br>
+         <button class="button-panel" id="codeAccept">Подтвердить</button>
+      </div>
+   </div>
+
+
+
+
+
+
+
+
+   <div class="container">
+      <a class="glavnaya" id="link" href="./categories">
+         <div class="image"><img src="https://github.com/qwebdesigns/armtime/blob/main/assets/image/Alan4.png?raw=true"
+               alt=""></div>
+         <h1 id="text">СПОРТСМЕНЫ</h1>
+      </a>
+      <div class="haracter" id="openMenuBtn">
+         <div class="image2"><img class="img2"
+               src="https://github.com/qwebdesigns/armtime/blob/main/assets/image/triArm5.png?raw=true" alt=""></div>
+         <h1 id="text">МОЯ<br>ХАРАКТЕРИСТИКА</h1>
+      </div>
+      <a class="top" id="link" href="https://forms.fillout.com/t/kAmhfRDhjhus">
+         <h1 id="liniya-1">Регистрация в ARM TIME</h1>
+      </a>
+      <a class="novosty" id="link" href="https://t.me/timetoarm">
+         <h1 id="liniya-2">НОВОСТИ - лента новостей <br>Техподдержка<br>Армфайты</h1><img
+            src="https://github.com/qwebdesigns/armtime/blob/main/assets/image/amc2.png?raw=true" alt="">
+      </a>
+      <a class="svyaz" id="link" href="https://forms.fillout.com/t/qkjjdR3pheus">
+         <h1>Верифицировать<br>Или изменить аккаунт</h1>
+      </a>
+      <a class="video" href="https://youtube.com/@arm-time1?si=Hu-l2ygP19vtmu5P"></a>
+   </div>
+   <!-- Элемент loadingotherpage с иконкой загрузки -->
+   <div class="loadingotherpage">
+      <div class="loading-icon"></div>
+      <div class="loading-text" id="loadingText"></div>
+   </div>
+
+   <div class="reclama_w" id="yandex_rtb_R-A-13995541-1"></div>
+   <div class="recl_mobile_top" id="yandex_rtb_R-A-13995541-6"></div>
+
+   <!-- Yandex.RTB R-A-13995541-1 -->
+   <script>
+      window.yaContextCb.push(() => {
+         Ya.Context.AdvManager.render({
+            "blockId": "R-A-13995541-1",
+            "renderTo": "yandex_rtb_R-A-13995541-1",
+            "type": "floorAd",
+            "platform": "desktop"
+         })
+      })
+   </script>
+
+   <!-- Yandex.RTB R-A-13995541-6 -->
+   <script>
+      window.yaContextCb.push(() => {
+         Ya.Context.AdvManager.render({
+            "blockId": "R-A-13995541-6",
+            "renderTo": "yandex_rtb_R-A-13995541-6",
+            "type": "topAd"
+         })
+      })
+   </script>
+
+   
+   <script src="../web_scripts/databaseSript.js"></script>
+   <script src="../web_scripts/MainPage_Logic.js"></script>
 </body>
+
 
 </html>

@@ -26,7 +26,7 @@ stat_button.addEventListener('click', function(){
         document.getElementById('codeModal').style.display = 'flex';
         is_open_modal = true;
     } else {
-        window.location.href = "../stats/?unicod=\""+member_code+"\"";
+        window.location.href = "./stats/?unicod=\""+member_code+"\"";
     }
 });
 
@@ -64,7 +64,7 @@ document.getElementById('codeAccept').addEventListener('click', function () {
         for (let i = 0; i < data.length; i++) {
             if (data[i]["Код"] === code) {
                 localStorage.setItem('unical_member_code', code);
-                window.location.href = "../stats/?unicod=\"" + code + "\"";
+                window.location.href = "./stats/?unicod=\"" + code + "\"";
                 codeFound = true;
                 break;
             }

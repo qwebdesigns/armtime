@@ -1,6 +1,6 @@
 let data = JSON.parse(localStorage.getItem('cachedJsonData'));
 let currentData;
-const filePath = '../settings/category.json';
+const filePath = '../web_scripts/Settings_CurrentCategory.json';
 let currentCategory;
 let currentName;
 
