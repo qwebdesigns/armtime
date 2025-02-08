@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Загрузка...</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: black;
+            overflow: hidden;
+        }
+
+        canvas {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgb(0, 0, 0);
+            z-index: 1;
+        }
+    </style>
+    <link rel="stylesheet" href="./reclama.css">
+    <!-- Yandex.RTB -->
+    <script src="https://yandex.ru/ads/system/context.js" async></script>
+    <script>
+        window.yaContextCb = window.yaContextCb || []
+    </script>
+    <meta name="yandex-verification" content="c007aaf83a665512" />
+</head>
+
+<body>
+    <canvas id="myCanvas"></canvas>
+    <div class="reclama_w" id="yandex_rtb_R-A-13995541-2"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Yandex.RTB R-A-13995541-2 -->
+    <script>
+        window.yaContextCb.push(() => {
+            Ya.Context.AdvManager.render({
+                "blockId": "R-A-13995541-2",
+                "renderTo": "yandex_rtb_R-A-13995541-2",
+                "type": "floorAd",
+                "platform": "touch"
+            })
+        })
+    </script>
+
+
+
+    <script>
+        var canvas = document.getElementById('myCanvas');
+        canvas.width = canvas.clientWidth;
+        canvas.height = canvas.clientHeight;
+
+        var context = canvas.getContext('2d');
+        var polygonSizeFactor = 0.05; // Фактор размера многоугольника
+        var numberOfPoints = 150; // Количество точек
+        var angleIncrement = Math.PI / 360; // Увеличение угла
+        var pointSize = 1; // Размер точки
+        var fillColor = 'white'; // Цвет заливки
+        var mergeDistanceFactor = 0.005; // Процент от минимального размера канваса для слияния точек
+        var speedFactor = 975 / 1000; // Настройка скорости шариков, 0.99 - медленно, меньшее значение - быстрее
+
+        var size = Math.max(canvas.width, canvas.height) / 2; // Размер круга для появления точек
+        var mergeDistance = Math.max(canvas.width, canvas.height) * mergeDistanceFactor;
+        context.fillStyle = fillColor;
+
+        var points = [];
+        for (var i = 0; i < numberOfPoints; i++) {
+            var angle = (i * 2 * Math.PI) / numberOfPoints;
+            var x = (size + 50) *
+                Math.cos(angle);
+            var y = (size + 50) * Math.sin(angle);
+            points.push({
+                x: x,
+                y: y
+            });
+        }
+
+        function draw() {
+            points = points.filter(function (point, index) {
+                context.beginPath();
+                context.arc(point.x + canvas.width / 2,
+                    point.y + canvas.height / 2, pointSize, 0, 2 * Math.PI);
+                context.fill();
+                var newX = point.x *
+                    Math.cos(angleIncrement) + point.y * Math.sin(angleIncrement);
+                var newY = -point.x * Math.sin(angleIncrement) +
+                    point.y * Math.cos(angleIncrement);
+                point.x = newX * speedFactor; // Уменьшаем размер для слетания к центру
+                point.y = newY * speedFactor;
+                for (var j = index + 1; j < points.length; j++) {
+                    var otherPoint = points[j];
+                    var
+                        distance = Math.sqrt(Math.pow(point.x - otherPoint.x, 2) + Math.pow(point.y - otherPoint
+                            .y, 2));
+                    if (distance <
+                        mergeDistance && points.length > 3) {
+                        // Объединяем точки
+                        point.x = (point.x + otherPoint.x) / 2;
+                        point.y = (point.y + otherPoint.y) / 2;
+                        // Удаляем другую точку
+                        points.splice(j, 1);
+                        break;
+                    }
+                }
+
+                var distanceToCenter = Math.sqrt(Math.pow(point.x, 2) + Math.pow(point.y, 2));
+                return distanceToCenter > 1; // Удаляем точки, когда они достигают центра
+            });
+
+
+
+            if (points.length > 3) {
+                requestAnimationFrame(draw);
+            } else {
+                points = []; // Удаляем оставшиеся три точки
+                window.location.href = './main/';
+            }
+        }
+        
+
+
+        draw();
+    </script>
+</body>
+
+</html>

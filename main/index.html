@@ -6,11 +6,45 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="arm.css">
    <link rel="stylesheet" href="arm_phone.css">
+   <link rel="stylesheet" href="../reclama.css">
    <title>ARM TIME</title>
+   <!-- Yandex.RTB -->
+   <script src="https://yandex.ru/ads/system/context.js" async></script>
+   <script>
+      window.yaContextCb = window.yaContextCb || []
+   </script>
+   
 </head>
 
 <body>
+   <!-- Yandex.Metrika counter -->
+   <script type="text/javascript">
+      (function (m, e, t, r, i, k, a) {
+         m[i] = m[i] || function () {
+            (m[i].a = m[i].a || []).push(arguments)
+         };
+         m[i].l = 1 * new Date();
+         for (var j = 0; j < document.scripts.length; j++) {
+            if (document.scripts[j].src === r) {
+               return;
+            }
+         }
+         k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(
+            k, a)
+      })
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
+      ym(99843991, "init", {
+         clickmap: true,
+         trackLinks: true,
+         accurateTrackBounce: true,
+         webvisor: true
+      });
+   </script>
+   <noscript>
+      <div><img src="https://mc.yandex.ru/watch/99843991" style="position:absolute; left:-9999px;" alt="" /></div>
+   </noscript>
+   <!-- /Yandex.Metrika counter -->
 
 
    <div id="codeModal" class="modal" style="display: none;">
@@ -62,6 +96,31 @@
       <div class="loading-text" id="loadingText"></div>
    </div>
 
+   <div class="reclama_w" id="yandex_rtb_R-A-13995541-1"></div>
+   <div class="recl_mobile_top" id="yandex_rtb_R-A-13995541-6"></div>
+
+   <!-- Yandex.RTB R-A-13995541-1 -->
+   <script>
+      window.yaContextCb.push(() => {
+         Ya.Context.AdvManager.render({
+            "blockId": "R-A-13995541-1",
+            "renderTo": "yandex_rtb_R-A-13995541-1",
+            "type": "floorAd",
+            "platform": "desktop"
+         })
+      })
+   </script>
+
+   <!-- Yandex.RTB R-A-13995541-6 -->
+   <script>
+      window.yaContextCb.push(() => {
+         Ya.Context.AdvManager.render({
+            "blockId": "R-A-13995541-6",
+            "renderTo": "yandex_rtb_R-A-13995541-6",
+            "type": "topAd"
+         })
+      })
+   </script>
    <script src="../databaseSript.js"></script>
    <script src="./logic.js"></script>
 </body>
